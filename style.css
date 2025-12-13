@@ -1,0 +1,31 @@
+
+
+/* 1) Import Tailwind */
+@import "tailwindcss";
+
+/* 2) Define your custom font class using @theme */
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* 3) (Optional) make it the default font for body */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes stripes-move {
+    0%   { background-position: 0 0; }
+    100% { background-position: 30px 0; }
+  }
+  
+  @utility animate-stripes {
+    background-size: 30px 30px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #4f46e5,
+      #4f46e5 10px,
+      #6366f1 10px,
+      #6366f1 20px
+    );
+    animation: stripes-move 1s linear infinite;
+  }
