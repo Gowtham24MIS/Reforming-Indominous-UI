@@ -8,7 +8,7 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
-/* 3) (Optional) make it the default font for body */
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -28,4 +28,9 @@ body {
       #6366f1 20px
     );
     animation: stripes-move 1s linear infinite;
+  }
+
+  li{
+    color: rgb(227, 226, 226);  
+    margin-bottom: 10px ;
   }
