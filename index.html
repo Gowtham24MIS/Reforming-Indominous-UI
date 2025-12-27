@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-
+    <link rel="png" href="indom.png">
     <title>Indominous</title>
 </head>
 
 <!-- <body style="background: radial-gradient(circle, #a46ae4 0%, #3a1d71 60%, #2c1556 100%);"> -->
-    <body class="overflow-x-hidden" style="background: radial-gradient(circle, #f7f5fa 0%, #f8f7fb 60%, #ffffff 100%);">
+    <body class="overflow-x-hidden" style="background: radial-gradient(circle, #f5f7fa 0%, #f7f9fb 60%, #ffffff 100%);">
     
     <!--This is the header of the web-->
-    
-        <header class=" bg-white w-auto text-purple-700 flex justify-between h-[75px] py-4">
+        <div>
+        <header class=" bg-gray-200 text-cyan-800 flex justify-between w-screen p-5 fixed z-50  top-0">
             
-            <div class="inline-block mr-[20px]" dir="ltr"><h1 class="ms-12 text-3xl" ><strong >Indominous labs</strong></h1></div>
+            <div class=" mr-[] flex gap-4 pl-5 ml-5" dir="ltr">
+                
+                <img src="images/indom.png" width="20px" class="rounded-full">
+                <h1 class=" text-3xl" ><strong >INDOMINOUS LABS</strong></h1>
+            </div>
             <div class="flex gap-4 pr-5 mr-5" dir="rtl">
                 
                 
@@ -32,6 +36,8 @@
             </div>
             </div>
         </header>
+        </div>
+        
 
         <!-- <div><h1>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h1></div> -->
 
@@ -39,20 +45,31 @@
     <!--  This is the intro box of the web-->
     
 
-    <div class=" h-[600px] text-white flex-1 m-5 rounded-3xl flex justify-around mt-10 mb-20" style="background: radial-gradient(circle, #a46ae4 0%, #3a1d71 60%, #2c1556 100%);">
-        <div>
-            <center>
-            <pre class=" font-semibold font-poppins  text-4xl mr-30" >
-            <h1>
-                <b>
-        Empowering the Future of Digital Security with Innovative, Compliant, and 
-        <br>Seamless Solutions for a Connected World.
-                </b>
-            </h1>
-            </pre>
-            </center>
-        </div>
+    <div class=" h-[625px] mx-5 mt-30 rounded-3xl relative bottom-5 " data-aos="fade-up" style="background: radial-gradient(circle, #6aa9e4 0%, #1d3f71 60%, #153b56 100%);">
         
+        <div class="flex justify-around  mt-30">
+        
+            <div class=" text-white">
+                <h1 class="font-semibold font-poppins text-4xl p-15" >
+                    <b>           
+            Empowering the Future of Digital Security <br><br> with Innovative, Compliant, and <br>
+            <br>Seamless Solutions for a<br><br> Connected World.
+                    </b>
+                </h1>
+            </div>
+
+            <div class="w-auto">
+                <img src="images/Security-amico.png" class="w-[500px]">
+            </div>
+
+        </div>
+
+        
+          <div class="line-container">
+            <div class="moving-line"></div>
+          </div>
+          
+
     </div>
      
     
@@ -60,46 +77,101 @@
         
     <div class=""> 
 
-        <div class="flex justify-around my-20 mb-20">
-            <div class="border-2  rounded-2xl w-[325px] overflow-x-hidden">
-                <h1 class="text-center text-3xl bg-gray-700 w-auto p-5 text-white">Em-Auth</h1>
-                <h3 class="text-center p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad cupiditate voluptate architecto perferendis aspernatur amet blanditiis ullam repudiandae accusamus quas?</h3>
-                <center><button class="bg-purple-500 text-white w-auto p-2 mb-5 rounded-lg cursor-pointer  hover:bg-white hover:text-purple-500 ">What is it?</button></center>
+        <div class="text-5xl text-blue-600 text-center pt-15">PRODUCTS</div>
+
+        <div class="flex justify-around pt-20">
+            <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
+            flex flex-col items-center
+            shadow-xl shadow-yellow-400/40
+            transition-all duration-300 ease-out
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+                <center>
+                <div class="bg-white w-[100px] h-[100px] rounded-full">
+                    <img src="images/key.png" class="rounded-full">
+                </div>
+            </center>
+            <div class="bg-white w-auto mt-10 h-1"></div>
+                <div class="flex flex-col items-center p-10">
+                    <h2 class="text-2xl"><b>EmAuth</b></h2><br>
+                    <p>Password-less Authentication</p>
+                </div>
             </div>
 
-            <div  class="mt-20  text-4xl text-purple-700">
-                <h1><b>PRODUCTS</b></h1>
+            <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
+            flex flex-col items-center
+            shadow-xl shadow-yellow-400/40
+            transition-all duration-300 ease-out
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+                <center>
+                    <div class="bg-white w-[100px] h-[100px] rounded-full">
+                        <img src="images/m3logo.png" class="rounded-full ">
+                    </div>
+                </center>
+                <div class="bg-white w-auto mt-10 h-1"></div>
+                <div class="flex flex-col items-center p-10">
+                    <h2 class="text-2xl"><b>Em-Metrices</b></h2><br>
+                    <p>Password-less Authentication</p>
+                </div>
             </div>
 
-            <div class="border-2 rounded-2xl w-[325px] overflow-x-hidden">
-                <h1 class="text-center text-3xl bg-gray-700 w-auto p-5 text-white">Em-Metrice</h1>
-                <h3 class="text-center p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad cupiditate voluptate architecto perferendis aspernatur amet blanditiis ullam repudiandae accusamus quas?</h3>
-                <center><button class="bg-purple-500 text-white w-auto p-2 mb-5 rounded-lg cursor-pointer  hover:bg-white hover:text-purple-500 ">What is it?</button></center>
+            <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
+            flex flex-col items-center
+            shadow-xl shadow-yellow-400/40
+            transition-all duration-300 ease-out
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+                <center>
+                    <div class="bg-white w-[100px] h-[100px] rounded-full">
+                        <img src="images/flickanalytics_logo.png"  class="rounded-full ">
+                    </div>
+                </center>
+                <div class="bg-white w-auto mt-10 h-1"></div>
+
+                <div class="flex flex-col items-center p-10">
+                    <h2 class="text-2xl"><b>FlickAnalytics</b></h2><br>
+                    <p>Password-less Authentication</p>
+                </div>
+            </div>
+
+            <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
+            flex flex-col items-center
+            shadow-xl shadow-yellow-400/40
+            transition-all duration-300 ease-out
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+                <center>
+                    <div class="bg-white w-[100px] h-[100px] rounded-full">
+                        <img src="images/shield.png" class="rounded-full">
+                    </div>
+                </center>
+                <div class="bg-white w-auto mt-10 h-1"></div>
+
+                <div class="flex flex-col items-center p-10">
+                    <h2 class="text-2xl"><b>Behavorial Biometrics</b></h2><br>
+                    <p>Password-less Authentication</p>
+                </div>
+            </div>
+
+            <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
+            flex flex-col items-center
+            shadow-xl shadow-yellow-400/40
+            transition-all duration-300 ease-out
+            hover:-translate-y-3 hover:shadow-xl hover:shadow-yellow-400/60">
+                <center>
+                    <div class="bg-white w-[100px] h-[100px] rounded-full">
+                        <img src="images/Robotface.svg" class="rounded-full">
+                    </div>
+                </center>
+                <div class="bg-white w-auto mt-10 h-1"></div>
+
+                <div class="flex flex-col items-center p-10">
+                    <h2 class="text-2xl"><b>Facing Eye&Tracking</b></h2><br>
+                    <p>Password-less Authentication</p>
+                </div>
             </div>
 
             
             
         </div>
-
-        <div class="flex justify-around my-20 mb-20 ">
-            <div class="border-2 rounded-2xl w-[325px] overflow-x-hidden">
-                <h1 class="text-center text-3xl bg-gray-700 w-auto p-5 text-white">Flickanalytics</h1>
-                <h3 class="text-center p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad cupiditate voluptate architecto perferendis aspernatur amet blanditiis ullam repudiandae accusamus quas?</h3>
-                <center><button class="bg-purple-500 text-white w-auto p-2 mb-5 rounded-lg cursor-pointer  hover:bg-white hover:text-purple-500 ">What is it?</button></center>
-            </div>   
-            <div class="border-2 rounded-2xl w-[325px] overflow-x-hidden">
-                <h1 class="text-center text-3xl bg-gray-700 w-auto p-5 text-white">Behaviorial</h1>
-                <h3 class="text-center p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad cupiditate voluptate architecto perferendis aspernatur amet blanditiis ullam repudiandae accusamus quas?</h3>
-                <center><button class="bg-purple-500 text-white w-auto p-2 mb-5 rounded-lg cursor-pointer  hover:bg-white hover:text-purple-500 ">What is it?</button></center>
-            </div>  
-
-            <div class="border-2 rounded-2xl w-[325px] overflow-x-hidden">
-                <h1 class="text-center text-3xl bg-gray-700 w-auto p-5 text-white">Face Detector</h1>
-                <h3 class="text-center p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad cupiditate voluptate architecto perferendis aspernatur amet blanditiis ullam repudiandae accusamus quas?</h3>
-                <center><button class="bg-purple-500 text-white w-auto p-2 mb-5 rounded-lg cursor-pointer  hover:bg-white hover:text-purple-500 ">What is it?</button></center>
-            </div>  
-
-        </div>
+        
     </div>
     </div>
 
@@ -109,11 +181,10 @@
         <div class=" my-10 p-5 rounded-xl  text-indigo-500 h-screen bg-white" data-aos="fade-up" >    
             <div class="flex justify-around">
                 <div class="w-[600px]">
-                    <h1 class="text-6xl mt-10 text-amber-600"><b>Em Auth</b></h1>
+                    <h1 class="text-6xl mt-10 text-cyan-800"><b>Em Auth</b></h1>
                     <br>
                     <p>
 
-                    <h2>Protect Your Digital World with Password-less Authentication</h2>
                         <pre class="text-xl text-purple-800">
                            
                         </pre>
@@ -125,7 +196,7 @@
                 </div>
             </div>
 
-            <div class="bg-amber-600 text-black w-auto mt-40 p-7 rounded-xl flex justify-around">
+            <div class="bg-amber-300 text-black w-auto mt-40 p-7 rounded-xl flex justify-around">
                 <div>
                     <h1 class="text-2xl"><b>100%</b></h1>
                     <p>Paswordless free</p>
@@ -147,20 +218,19 @@
                 </div>
 
             </div>
+
+            
         </div>
 
+        
         <!--Flick Analytics-->
         
         <div class=" my-10 p-5 rounded-xl h-screen" data-aos="fade-up">
             <div class="flex justify-around">
                 <div class="w-[600px] ">
-                <h1 class="text-6xl  text-amber-600 p-5 "><b>Flickanalytics</b></h1><br><br>
-                
-
-                <h3 class="text-purple-700 text-xl">
-                    A revolutionary solution that uses machine learning and aritificial intelligence to serve media and entertainment industry.<br><br>
-                </h3>
-
+                    <h1 class="text-6xl text-cyan-800 p-5 "><b>Flick Analytics</b></h1><br><br>
+                    <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
+                    <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
                 </div>
 
                 <div class="w-[400px]">
@@ -170,7 +240,7 @@
 
             <div class="m-20 text-center">
                 <h2 class="text-2xl">To Know about the Flick Analytics just click it</h2><br>
-                <a href="https://flickanalytics.in/"><button class="p-5 rounded-2xl bg-purple-500 text-white hover:bg-purple-700">Flick Analytics</button></a>
+                <a href="https://flickanalytics.in/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Flick Analytics</button></a>
             </div>
         </div>
 
@@ -180,7 +250,7 @@
         <div class=" my-10 p-5 rounded-xl h-screen bg-white" data-aos="fade-up">
             <div class="flex justify-around">
                 <div class="w-[600px] ">
-                    <h1 class="text-6xl text-amber-600 p-5 "><b>Behavorial Biometrics</b></h1><br><br>
+                    <h1 class="text-6xl text-cyan-800 p-5 "><b>Behavorial Biometrics</b></h1><br><br>
                     <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
                     <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
                 </div>
@@ -188,13 +258,17 @@
                     <img src="images/Fingerprint.svg" class="mt-10">
                 </div>
             </div>
+
+            <div>
+                <div></div>
+            </div>
         </div>
 
         <!--Face Eye Tracing-->
         <div class=" my-10 p-5 rounded-xl   h-screen" data-aos="fade-up" >    
             <div class="flex justify-around">
                 <div class="w-[600px]">
-                    <h1 class="text-6xl  text-amber-600 p-5"><b>Face & Eye Tracking</b></h1><br><br>
+                    <h1 class="text-6xl  text-cyan-800 p-5"><b>Face & Eye Tracking</b></h1><br><br>
                      <!--It is the original for the content--> 
                    <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
                    <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
@@ -206,7 +280,7 @@
 
             <div class="text-center my-30">
                 <h2><b>To Know about it briefly just click it!</b></h2><br>
-                <a href="https://facetracker.indominuslabs.in/"><button class="p-5 rounded-2xl bg-purple-500 text-white hover:bg-purple-700">Face Detector</button></a>
+                <a href="https://facetracker.indominuslabs.in/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Face Detector</button></a>
             </div>    
         </div>
 
@@ -215,7 +289,7 @@
         <div class=" my-10 p-5 rounded-xl h-screen bg-white" data-aos="fade-up"  >    
             <div class="flex justify-around">
                 <div class="w-[600px]">
-                    <h1 class="text-6xl mt-10 text-amber-600 p-5"><b>Em Metrics</b></h1><br><br>
+                    <h1 class="text-6xl mt-10 text-cyan-800 p-5"><b>Em Metrics</b></h1><br><br>
                     <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
                     <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
                 </div>
@@ -226,14 +300,14 @@
 
             <div class="text-center my-30">
                 <h2><b>To Know about it briefly just click it!</b></h2><br>
-                <a href="https://m-analytics-rust.vercel.app/"><button class="p-5 rounded-2xl bg-purple-500 text-white hover:bg-purple-700">Em Metrics</button></a>
+                <a href="https://m-analytics-rust.vercel.app/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Em Metrics</button></a>
             </div>    
         </div>
-
+        
 
         <!--Footer-->
-            <footer class="bg-purple-950 w-auto text-white">
-                <div class="bg-purple-950 w-auto text-white p-5 mt-10 flex justify-around">
+            <footer class="bg-cyan-950 w-auto text-white">
+                <div class="bg-cyan-950 w-auto text-white p-5 mt-10 flex justify-around">
 
                     <div class="w-[170px]">
                         <h2 class="text-2xl mb-10"><b>Indominous Labs</b></h2>
@@ -283,7 +357,7 @@
                         </ul>
                     </div>
                 </div>
-                <h1>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h1>
+                <div class="bg-white w-screen h-1"></div>
                 <div class="p-5 text-center">
                     <h2>&copy; indominuslabs@2025 all rights reserved</h2>
                 </div>
@@ -305,3 +379,6 @@
 
   
 </html>
+
+<!--<div class="bg-white w-screen h-1"></div>
+-->
