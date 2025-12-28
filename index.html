@@ -6,23 +6,22 @@
     <link rel="stylesheet" href="output.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="png" href="indom.png">
-    <title>Indominous</title>
+    <title>Indominus Labs</title>
 </head>
 
 <!-- <body style="background: radial-gradient(circle, #a46ae4 0%, #3a1d71 60%, #2c1556 100%);"> -->
-    <body class="overflow-x-hidden" style="background: radial-gradient(circle, #f5f7fa 0%, #f7f9fb 60%, #ffffff 100%);">
+    <body style="background: radial-gradient(circle, #f5f7fa 0%, #f7f9fb 60%, #ffffff 100%);">
     
     <!--This is the header of the web-->
-        <div>
+        <div class="overflow-x-hidden">
         <header class=" bg-gray-200 text-cyan-800 flex justify-between w-screen p-5 fixed z-50  top-0">
             
             <div class=" mr-[] flex gap-4 pl-5 ml-5" dir="ltr">
                 
                 <img src="images/indom.png" width="20px" class="rounded-full">
-                <h1 class=" text-3xl" ><strong >INDOMINOUS LABS</strong></h1>
+                <h1 class=" text-3xl" ><strong >INDOMINUS LABS</strong></h1>
             </div>
             <div class="flex gap-4 pr-5 mr-5" dir="rtl">
                 
@@ -34,9 +33,9 @@
                 <h1 class="order-1">Contact us</h1>
                 
             </div>
-            </div>
+            
         </header>
-        </div>
+       
         
 
         <!-- <div><h1>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h1></div> -->
@@ -79,12 +78,14 @@
 
         <div class="text-5xl text-blue-600 text-center pt-15">PRODUCTS</div>
 
+        
         <div class="flex justify-around pt-20">
+            <a href="#emauth">
             <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
             flex flex-col items-center
             shadow-xl shadow-yellow-400/40
             transition-all duration-300 ease-out
-            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60 hover:bg-amber-400">
                 <center>
                 <div class="bg-white w-[100px] h-[100px] rounded-full">
                     <img src="images/key.png" class="rounded-full">
@@ -96,12 +97,14 @@
                     <p>Password-less Authentication</p>
                 </div>
             </div>
+            </a>
 
+            <a href="#other_products">
             <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
             flex flex-col items-center
             shadow-xl shadow-yellow-400/40
             transition-all duration-300 ease-out
-            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60 hover:bg-amber-400">
                 <center>
                     <div class="bg-white w-[100px] h-[100px] rounded-full">
                         <img src="images/m3logo.png" class="rounded-full ">
@@ -113,12 +116,14 @@
                     <p>Password-less Authentication</p>
                 </div>
             </div>
+            </a>
 
+            <a href="#other_products">
             <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
             flex flex-col items-center
             shadow-xl shadow-yellow-400/40
             transition-all duration-300 ease-out
-            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60 hover:bg-amber-400">
                 <center>
                     <div class="bg-white w-[100px] h-[100px] rounded-full">
                         <img src="images/flickanalytics_logo.png"  class="rounded-full ">
@@ -131,12 +136,14 @@
                     <p>Password-less Authentication</p>
                 </div>
             </div>
+            </a>
 
+            <a href="#behavorial_biometrics">
             <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
             flex flex-col items-center
             shadow-xl shadow-yellow-400/40
             transition-all duration-300 ease-out
-            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60">
+            hover:-translate-y-3 hover:shadow-2xl hover:shadow-yellow-400/60 hover:bg-amber-400">
                 <center>
                     <div class="bg-white w-[100px] h-[100px] rounded-full">
                         <img src="images/shield.png" class="rounded-full">
@@ -149,12 +156,14 @@
                     <p>Password-less Authentication</p>
                 </div>
             </div>
+            </a>
 
+            <a href="#other_products">
             <div class="w-[200px] bg-amber-300 p-10 rounded-2xl h-[380px]
             flex flex-col items-center
             shadow-xl shadow-yellow-400/40
             transition-all duration-300 ease-out
-            hover:-translate-y-3 hover:shadow-xl hover:shadow-yellow-400/60">
+            hover:-translate-y-3 hover:shadow-xl hover:shadow-yellow-400/60 hover:bg-amber-400">
                 <center>
                     <div class="bg-white w-[100px] h-[100px] rounded-full">
                         <img src="images/Robotface.svg" class="rounded-full">
@@ -178,25 +187,30 @@
     <!--Em-Auth-->
 
         <!--<div class="border border-4 my-10 p-5 rounded-xl  text-white h-screen"  style="background: radial-gradient(circle, #531496 0%, #3a1d71 60%, #2c1556 100%);">-->
-        <div class=" my-10 p-5 rounded-xl  text-indigo-500 h-screen bg-white" data-aos="fade-up" >    
+        <div class=" my-10 p-5 rounded-xl   min-h-screen bg-white" data-aos="fade-up" id="emauth">    
             <div class="flex justify-around">
-                <div class="w-[600px]">
+                <div class="w-[600px] ">
                     <h1 class="text-6xl mt-10 text-cyan-800"><b>Em Auth</b></h1>
                     <br>
-                    <p>
+                    <div class="pt-10 flex">
+                        <h1 class="text-4xl"><b class="text-cyan-600 text-9xlxl">" </b></h1><br>
+                        <h2 class="text-4xl">Unbreakable security without the burden of passwords <b class="text-cyan-600">"</b></h2>
+                        
+                    </div>
 
-                        <pre class="text-xl text-purple-800">
-                           
-                        </pre>
-                    </p>
+                    <h2 class="text-2xl pt-20 text-cyan-600"><strong><i>Where authentication meets innovation</i></strong></h2>
+
+
                 </div>
+
+                
                 
                 <div class="w-[400px]">
                     <img src="images/authentication_1evl.svg" class="mt-10">
                 </div>
             </div>
 
-            <div class="bg-amber-300 text-black w-auto mt-40 p-7 rounded-xl flex justify-around">
+            <div class="bg-amber-400 text-black w-auto mt-40 p-7 rounded-xl flex justify-around">
                 <div>
                     <h1 class="text-2xl"><b>100%</b></h1>
                     <p>Paswordless free</p>
@@ -225,86 +239,259 @@
         
         <!--Flick Analytics-->
         
-        <div class=" my-10 p-5 rounded-xl h-screen" data-aos="fade-up">
-            <div class="flex justify-around">
-                <div class="w-[600px] ">
-                    <h1 class="text-6xl text-cyan-800 p-5 "><b>Flick Analytics</b></h1><br><br>
-                    <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
-                    <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
-                </div>
-
-                <div class="w-[400px]">
-                    <img src="images/Film rolls.svg" class="mt-10">
-                </div>
-            </div>
-
-            <div class="m-20 text-center">
-                <h2 class="text-2xl">To Know about the Flick Analytics just click it</h2><br>
-                <a href="https://flickanalytics.in/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Flick Analytics</button></a>
-            </div>
-        </div>
+        
 
 
         <!--Behavorial Biometrics-->
 
-        <div class=" my-10 p-5 rounded-xl h-screen bg-white" data-aos="fade-up">
+        <div class=" my-10 p-5 rounded-xl h-screen " data-aos="fade-up" id="behavorial_biometrics">
             <div class="flex justify-around">
                 <div class="w-[600px] ">
-                    <h1 class="text-6xl text-cyan-800 p-5 "><b>Behavorial Biometrics</b></h1><br><br>
-                    <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
-                    <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
+                    <h1 class="text-6xl text-cyan-800 p-5 "><b>Behavorial Biometrics</b></h1>
+                    <br>
+
+                    <div class="py-10 flex">
+                        <h1 class="text-4xl"><b class="text-cyan-600 text-9xlxl">" </b></h1><br>
+                        <h2 class="text-4xl">Strengthen application security using advanced behavioral biometrics <b class="text-cyan-600">"</b></h2>
+                        
+                    </div>
+
+                    <h2 class="text-2xl pb-10 text-cyan-600"><strong><i>Security that learns. Protection that adapts.</i></strong></h2>
+
+
                 </div>
                 <div class="w-[400px]">
                     <img src="images/Fingerprint.svg" class="mt-10">
                 </div>
             </div>
 
-            <div>
-                <div></div>
-            </div>
-        </div>
-
-        <!--Face Eye Tracing-->
-        <div class=" my-10 p-5 rounded-xl   h-screen" data-aos="fade-up" >    
+            <h2 class="text-center text-2xl pb-5"><strong>How it Works</strong></h2>
             <div class="flex justify-around">
-                <div class="w-[600px]">
-                    <h1 class="text-6xl  text-cyan-800 p-5"><b>Face & Eye Tracking</b></h1><br><br>
-                     <!--It is the original for the content--> 
-                   <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
-                   <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
+                <div class="bg-amber-400 w-[300px] p-10 rounded-xl text-center transition-all duration-300 ease-out hover:-translate-y-3">
+                    <h2 class="text-2xl"><b>User behavior Analysis</b></h2>
+                    <div class="bg-amber-600 h-1 w-auto my-5"></div>
+                    <p class="mt-5">Collects and analyzes user behavior patterns in real-time.</p>
                 </div>
-                <div class="w-[400px]">
-                    <img src="images/Robotface.svg" class="mt-10">
+           
+
+            
+                <div class="bg-amber-400 w-[300px] p-10 rounded-xl text-center transition-all duration-300 ease-out hover:-translate-y-3">
+                    <h2 class="text-2xl"><b>ML Model Processing</b></h2>
+                    <div class="bg-amber-600 h-1 w-auto my-5"></div>
+                    <p class="mt-5">ML models detect anomalies in user behavior.</p>
                 </div>
-            </div>
+            
 
-            <div class="text-center my-30">
-                <h2><b>To Know about it briefly just click it!</b></h2><br>
-                <a href="https://facetracker.indominuslabs.in/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Face Detector</button></a>
-            </div>    
-        </div>
-
-        <!--Em metrics-->
-
-        <div class=" my-10 p-5 rounded-xl h-screen bg-white" data-aos="fade-up"  >    
-            <div class="flex justify-around">
-                <div class="w-[600px]">
-                    <h1 class="text-6xl mt-10 text-cyan-800 p-5"><b>Em Metrics</b></h1><br><br>
-                    <h1 class="my-10 text-2xl w-[600px]"><b>AI-Powered Proctoring for Secure Online Assessments</b></h1>
-                    <h2>When used together (often in VR headsets), they enable complete "face presence," where your avatar's eyes, gaze, and expressions mirror your own, creating immersive, natural interactions. </h2>
-                </div>
-                <div class="w-[400px]">
-                    <img src="images/Enginner.svg" class="mt-10">
+            
+                <div class="bg-amber-400 w-[300px] p-10 rounded-xl text-center transition-all duration-300 ease-out hover:-translate-y-3">
+                    <h2 class="text-2xl"><b>Threat Mitigation</b></h2>
+                    <div class="bg-amber-600 h-1 w-auto my-5"></div>
+                    <p class="mt-5">Suspicious activities are flagged and addressed immediately.</p>
                 </div>
             </div>
 
-            <div class="text-center my-30">
-                <h2><b>To Know about it briefly just click it!</b></h2><br>
-                <a href="https://m-analytics-rust.vercel.app/"><button class="p-5 rounded-2xl bg-cyan-500 text-white hover:bg-cyan-700">Em Metrics</button></a>
-            </div>    
+           
+
         </div>
+
         
 
+        
+        <!-- <div class="flex justify-around mb-20">
+            
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 1
+            </div>
+
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 2
+            </div>
+
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 3
+            </div>
+
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 4
+            </div>
+
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 5
+            </div> 
+
+            <div class="bg-amber-300 p-5 w-[200px] h-[300px] rounded-2xl">
+                Card 6
+            </div>
+
+        </div> -->
+
+        <center>
+        <div class="bg-white py-5 my-20">
+        <div>
+            <h2 class="bg-cyan-700 rounded-4xl text-2xl inline-block p-5 mt-5 text-white w-auto">Behavorial Biometrics</h2>
+        </div>
+        <h1 class="text-4xl text-cyan-700 text-center mb-10 mt-10"><b>Features & UseCases</b></h1>
+
+        
+            <div>
+                <a href="https://behaviour.indominuslabs.in/"><h2 class="text-xl  bg-cyan-600 hover:bg-cyan-800 text-white rounded-4xl inline-block p-2 mb-10"><b>Schedule Demo</b></h2></a>
+            </div>
+            
+
+        <div class="relative w-[680px] mb-10 text-center">
+
+            <!-- LEFT -->
+            <button onclick="prev()"
+              class="absolute -left-20 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10">
+              ◀
+            </button>
+          
+            <!-- RIGHT -->
+            <button onclick="next()"
+              class="absolute -right-20 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10">
+              ▶
+            </button>
+          
+            <!-- VIEWPORT -->
+            <div class="overflow-hidden w-auto">
+              <div id="track"
+                class="flex gap-4 transition-transform duration-500 ease-in-out">
+          
+                <!-- CLONES (LAST 3) -->
+                <div class="card">
+                    <i class="fa-solid fa-exchange-alt w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Transfer Learning Enabled</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-wallet w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Financial Services</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-building w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Enterprise Applications</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+          
+                <!-- REAL CARDS -->
+                <div class="card">
+                    <i class="fa-solid fa-shield w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Real-Time Anomaly Detection</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Advanced ML models to protect from unauthorized access.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fa-solid fa-database text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Modular Backend Integration</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Easy-to-use APIs for high-security applications</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-brain w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Scalable Database Support</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Works with PostgreSQL and supports efficient pooling.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-exchange-alt w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Transfer Learning Enabled</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-wallet w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Financial Services</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-building w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Enterprise Applications</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                </div>
+          
+                <!-- CLONES (FIRST 3) -->
+                <div class="card">
+                    <i class="fa-solid fa-shield w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Real-Time Anomaly Detection</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Advanced ML models to protect from unauthorized access.</p>
+                </div>
+                
+                <div class="card">
+                    <i class="fa-solid fa-database w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Modular Backend Integration</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class="text-xl pt-5 text-cyan-800">Easy-to-use APIs for high-security applications</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-brain w-5 text-cyan-700"></i>
+                    <h3 class="text-xl pb-5 pt-5"><b>Scalable Database Support</b></h3>
+                    <div class="bg-amber-600 h-1 w-auto"></div>
+                    <p class=" pt-5 text-cyan-800">Works with PostgreSQL and supports efficient pooling.</p>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <!--Other More Products-->
+          <div>
+            <h2 class="text-3xl text-cyan-800"><b>Other More Products</b></h2>
+            <div class="flex justify-around my-10" id="other_products">
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+                    <img src="images/Cam.png" class="w-full bg-white">
+                    <h3 class="text-2xl mt-10 text-center"><b>Flick Analytics</b></h3>
+                    <div class="bg-cyan-300 h-1 w-auto my-5"></div>
+                    <p class="text-white">A revolutionary solution that uses machine learning and aritificial intelligence to serve media and entertainment industry.</p>
+                    <a href="https://flickanalytics.in/"><h2 class="bg-cyan-700 inline-block p-2 rounded-2xl text-cyan-300 my-5 hover:bg-cyan-900 hover:text-white"><b>Learn More</b></h2></a>
+                </div>
+
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+                    <img src="images/m3logo.png" class="w-full bg-white">
+                    <h3 class="text-2xl my-10 text-center"><b>Em-Metrices</b></h3>
+                    <div class="bg-cyan-300 h-1 w-auto my-5"></div>
+                    <p class="text-white">M3 Analytics: Empowering Civil Site Efficiency through Seamless Integration of Materials, Measurement, Man-Power</p>
+                    <a href="https://m-analytics-rust.vercel.app/"><h2 class="bg-cyan-700 inline-block p-2 rounded-2xl text-cyan-300 my-5 hover:bg-cyan-900 hover:text-white"><b>Learn More</b></h2></a>
+                </div>
+
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+                    <img src="images/Robotface.svg" class="w-full bg-white">
+                    <h3 class="text-2xl my-10 text-center"><b>Face & Eye Tracking</b></h3>
+                    <div class="bg-cyan-300 h-1 w-auto my-5"></div>
+                    <p class="text-white">Proctor-Audit ensures fair exams by detecting anomalies and providing real-time monitoring for online assessments.</p>
+                    <a href="https://facetracker.indominuslabs.in/"><h2 class="bg-cyan-700 inline-block p-2 rounded-2xl text-cyan-300 my-5 hover:bg-cyan-900 hover:text-white"><b>Learn More</b></h2></a>
+                </div>
+
+            </div>
+          </div>
+
+        </center>
+
+        <!--Face Eye Tracing-->
+        
+        <!--Em metrics-->
+
+        
+        
+        <!--Talks & Rewards-->
+        <!--services-->
+
+        
         <!--Footer-->
             <footer class="bg-cyan-950 w-auto text-white">
                 <div class="bg-cyan-950 w-auto text-white p-5 mt-10 flex justify-around">
@@ -363,6 +550,8 @@
                 </div>
             </footer>
         
+        </div>
+
 
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             <script>
@@ -371,6 +560,43 @@
                 once: true        // animate only once
             });
             </script>
+
+<script>
+    const track = document.getElementById("track");
+    const cardWidth = 200 + 24;
+    let index = 3;
+  
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  
+    function next() {
+      index++;
+      track.style.transition = "transform 0.5s ease";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+  
+      if (index === 9) {
+        setTimeout(() => {
+          track.style.transition = "none";
+          index = 3;
+          track.style.transform = `translateX(-${index * cardWidth}px)`;
+        }, 500);
+      }
+    }
+  
+    function prev() {
+      index--;
+      track.style.transition = "transform 0.5s ease";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+  
+      if (index === 0) {
+        setTimeout(() => {
+          track.style.transition = "none";
+          index = 6;
+          track.style.transform = `translateX(-${index * cardWidth}px)`;
+        }, 500);
+      }
+    }
+  </script>
+
 
         
 </body>
