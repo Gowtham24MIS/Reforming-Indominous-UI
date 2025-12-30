@@ -16,26 +16,127 @@
     
     <!--This is the header of the web-->
         <div class="overflow-x-hidden">
-        <header class=" bg-gray-200 text-cyan-800 flex justify-between w-screen p-5 fixed z-50  top-0">
+            <header class="text-gray-200 bg-cyan-800 flex justify-between w-screen p-7 fixed z-50 top-0">
+  
+                <!-- Logo -->
+                <a href="#">
+                  <div class="flex gap-2 pl-5 ml-5 items-center">
+                    <img src="images/indom.png" width="20px" class="rounded-full">
+                    <h1 class="text-3xl font-bold">INDOMINUS LABS</h1>
+                  </div>
+                </a>
+              
+                <!-- Navigation -->
+                <nav class="flex gap-8 pr-10 text-xl relative">
+                  <button data-menu="platform" onclick="openMenu('platform', this)" class="menu-btn hover:text-orange-400">Platform</button>
+                  <button data-menu="solutions" onclick="openMenu('solutions', this)" class="menu-btn hover:text-orange-400">Solutions</button>
+                  <button data-menu="resources" onclick="openMenu('resources', this)" class="menu-btn hover:text-orange-400">Resources</button>
+                  <button data-menu="about" onclick="openMenu('about', this)" class="menu-btn hover:text-orange-400">About</button>
+                  <button onclick="openContact()" class="hover:text-orange-400">Contact Us</button>
+                  
+                </nav>
+              </header>
+
+              <!-- Mega Menu Overlay -->
+            <div id="megaMenu"
+                class="hidden fixed top-[90px] left-0 w-full bg-white text-gray-800 shadow-2xl z-40">
             
-            <div class=" mr-[] flex gap-4 pl-5 ml-5" dir="ltr">
-                
-                <img src="images/indom.png" width="20px" class="rounded-full">
-                <h1 class=" text-3xl" ><strong >INDOMINUS LABS</strong></h1>
+            <div class="max-w-7xl mx-auto  p-10">
+
+                <!-- LEFT CONTENT -->
+                <div id="menuContent" class="col-span-2 space-y-6">
+                <!-- Content injected by JS -->
+                </div>
             </div>
-            <div class="flex gap-4 pr-5 mr-5" dir="rtl">
-                
-                
-                <h1 class="order-5">Platform</h1>
-                <h1 class="order-4">Solutions</h1>
-                <h1 class="order-3">Resources</h1>
-                <h1 class="order-2">About</h1>
-                <h1 class="order-1">Contact us</h1>
-                
             </div>
-            
-        </header>
-       
+
+            <!-- Contact Us Modal -->
+<div id="contactModal"
+     class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center">
+
+     
+
+  <div class="bg-white rounded-2xl p-8 relative w-[1000px] flex justify-around">
+
+    <div>
+        <img src="images/contact-us.png" width="400px">
+    </div>
+    <div class="w-[500px]">
+    <!-- Close Button -->
+    <button onclick="closeContact()"
+            class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl">
+      &times;
+    </button>
+
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+      Contact Us -   Let's Connect
+    </h2>
+
+    <!-- Form -->
+    <form id="contactForm" class="space-y-4">
+
+    
+      <div>
+        <label class="block text-gray-600 mb-1">Name</label>
+        <div class="flex justify-around">
+        <input type="text" required placeholder="Your name"
+               class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-gray-600 mb-1">Email</label>
+        <input type="email" required placeholder="Your Email"
+               class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600">
+      </div>
+
+      <div>
+        <label class="block text-gray-600 mb-1">Phone</label>
+        <input type="tel" required placeholder="Your Phone"
+               class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-600">
+      </div>
+
+      <div>
+        <label class="block text-gray-600 mb-1">Message</label>
+        <textarea
+        rows="4"
+        placeholder="Your message"
+        class="w-full border rounded-lg px-4 py-2 resize-none
+               focus:outline-none focus:ring-2 focus:ring-cyan-600"></textarea>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-cyan-700 text-white py-3 rounded-lg font-semibold hover:bg-cyan-800 transition">
+        Submit
+      </button>
+
+    </form>
+  </div>
+  </div>
+</div>
+
+<!-- Success Popup -->
+<div id="successPopup"
+     class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+
+  <div class="bg-white rounded-2xl p-8 max-w-sm text-center shadow-2xl">
+    <div class="text-green-600 text-4xl mb-4">✔</div>
+    <h3 class="text-xl font-bold mb-2">Thank You!</h3>
+    <p class="text-gray-600">
+      We’ll connect with you within <b>24 hours</b>.
+    </p>
+
+    <button onclick="closeSuccess()"
+            class="mt-6 bg-cyan-700 text-white px-6 py-2 rounded-lg hover:bg-cyan-800">
+      OK
+    </button>
+  </div>
+</div>
+
+
+
+              
         
 
         <!-- <div><h1>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</h1></div> -->
@@ -44,7 +145,7 @@
     <!--  This is the intro box of the web-->
     
 
-    <div class=" h-[625px] mx-5 mt-30 rounded-3xl relative bottom-5 " data-aos="fade-up" style="background: radial-gradient(circle, #6aa9e4 0%, #1d3f71 60%, #153b56 100%);">
+    <!-- <div class=" h-[625px] mx-5 mt-30 rounded-3xl relative bottom-5 " data-aos="fade-up" style="background: radial-gradient(circle, #6aa9e4 0%, #1d3f71 60%, #153b56 100%);">
         
         <div class="flex justify-around  mt-30">
         
@@ -69,14 +170,54 @@
           </div>
           
 
+    </div> -->
+    <div class="h-screen fade-glow">
+
+       
+        <div>
+        <img src="images/main5.png" class="w-screen h-screen">
+        <div class=" text-gray-800 z-5 relative p-10 bottom-[700px]">
+            <h1 class="font-semibold font-poppins text-5xl  leading-20 drop-shadow-ms" >
+                <b>           
+                    Securing Digital Experiences <br>for a Smarter,<br> Connected Future
+                </b>
+            </h1>
+            <br>
+
+            
+              <br>
+            <p class="text-2xl mt-15 text-cyan-700"><i><b>" Innovation succeeds where trust exists."</b></i></p>
+            
+        </div>
+        </div>
+        <div class="line-container">
+            <div class="moving-line"></div>
+          </div>
+
     </div>
+
+    <!-- <div class="w-screen h-screen image-fix
+            bg-[url('images/home2.png')]
+            bg-no-repeat
+            bg-center
+            bg-cover">
+
+            <div class=" text-white my-10">
+                <h1 class="font-semibold font-poppins text-4xl p-15" >
+                    <b>           
+            Empowering the Future of Digital Security <br><br> with Innovative, Compliant, and <br>
+            <br>Seamless Solutions for a<br><br> Connected World.
+                    </b>
+                </h1>
+            </div>
+</div> -->
      
     
     <div class="h-screen"data-aos="fade-up">
         
     <div class=""> 
 
-        <div class="text-5xl text-blue-600 text-center pt-15">PRODUCTS</div>
+        <div class="text-5xl text-cyan-600 text-center pt-15"><strong>PRODUCTS</strong></div>
 
         
         <div class="flex justify-around pt-20">
@@ -326,7 +467,9 @@
         </div> -->
 
         <center>
-        <div class="bg-white py-5 my-20">
+        <div class="w-full h-screen 
+        bg-[url('./images/circuit-bg.png')] 
+        bg-cover bg-center bg-no-repeat py-5">
         <div>
             <h2 class="bg-cyan-700 rounded-4xl text-2xl inline-block p-5 mt-5 text-white w-auto">Behavorial Biometrics</h2>
         </div>
@@ -343,13 +486,13 @@
             <!-- LEFT -->
             <button onclick="prev()"
               class="absolute -left-20 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10">
-              ◀
+              &#10094;
             </button>
           
             <!-- RIGHT -->
             <button onclick="next()"
               class="absolute -right-20 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full z-10">
-              ▶
+              &#10095;
             </button>
           
             <!-- VIEWPORT -->
@@ -369,14 +512,14 @@
                     <i class="fa-solid fa-wallet w-5 text-cyan-700"></i>
                     <h3 class="text-xl pb-5 pt-5"><b>Financial Services</b></h3>
                     <div class="bg-amber-600 h-1 w-auto"></div>
-                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                    <p class="text-xl pt-5 text-cyan-800">Making financial services safer, faster, and easier for everyone</p>
                 </div>
 
                 <div class="card">
                     <i class="fa-solid fa-building w-5 text-cyan-700"></i>
                     <h3 class="text-xl pb-5 pt-5"><b>Enterprise Applications</b></h3>
                     <div class="bg-amber-600 h-1 w-auto"></div>
-                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                    <p class="text-xl pt-5 text-cyan-800">Powering enterprise operations with reliable, secure, and high-performance</p>
                 </div>
           
                 <!-- REAL CARDS -->
@@ -412,14 +555,14 @@
                     <i class="fa-solid fa-wallet w-5 text-cyan-700"></i>
                     <h3 class="text-xl pb-5 pt-5"><b>Financial Services</b></h3>
                     <div class="bg-amber-600 h-1 w-auto"></div>
-                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                    <p class="text-xl pt-5 text-cyan-800">Making financial services safer, faster, and easier for everyone</p>
                 </div>
 
                 <div class="card">
                     <i class="fa-solid fa-building w-5 text-cyan-700"></i>
                     <h3 class="text-xl pb-5 pt-5"><b>Enterprise Applications</b></h3>
                     <div class="bg-amber-600 h-1 w-auto"></div>
-                    <p class="text-xl pt-5 text-cyan-800">Adapt models seamlessly for custom data.</p>
+                    <p class="text-xl pt-5 text-cyan-800">Powering enterprise operations with reliable, secure, and high-performance </p>
                 </div>
           
                 <!-- CLONES (FIRST 3) -->
@@ -450,9 +593,11 @@
           </div>
           
           <!--Other More Products-->
-          <div>
-            <h2 class="text-3xl text-cyan-800"><b>Other More Products</b></h2>
-            <div class="flex justify-around my-10" id="other_products">
+          <div class="w-full h-screen 
+          bg-[url('./images/bg2.png')] 
+          bg-cover bg-center bg-no-repeat">
+            <h2 class="text-5xl text-cyan-800"><b>Other More Products</b></h2>
+            <div class="flex justify-around my-20" id="other_products">
                 <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
                     <img src="images/Cam.png" class="w-full bg-white">
                     <h3 class="text-2xl mt-10 text-center"><b>Flick Analytics</b></h3>
@@ -480,16 +625,103 @@
             </div>
           </div>
 
-        </center>
+        
 
-        <!--Face Eye Tracing-->
-        
-        <!--Em metrics-->
+    <!--Talks & Rewards-->
+    <div class="bg-white py-10 min-h-screen">
+    <h1 class="text-cyan-700 text-5xl my-10" id="talks"><b>Talks & Rewards</b></h1>
+        <!-- Fullscreen Carousel -->
+        <div class="relative w-screen h-screen overflow-hidden">
 
-        
-        
-        <!--Talks & Rewards-->
-        <!--services-->
+            <!-- Previous Button -->
+            <button id="prevBtn"
+              class="absolute left-6 top-1/2 -translate-y-1/2 
+                     bg-black/50 text-white p-4 rounded-full 
+                     hover:bg-black transition
+                     z-20">
+              &#10094;
+            </button>
+            
+            <!-- Next Button -->
+            <button id="nextBtn"
+              class="absolute right-6 top-1/2 -translate-y-1/2 
+                     bg-black/50 text-white p-4 rounded-full 
+                     hover:bg-black transition
+                     z-20">
+              &#10095;
+            </button>
+            
+
+      
+          <!-- Slider Track -->
+          <div id="slider"
+            class="flex w-full h-screen transition-transform duration-700 ease-in-out">
+      
+            <!-- Slide 1 -->
+            <section class="w-screen h-screen shrink-0 flex flex-col">
+              <!-- Image Half -->
+              <div class="h-[65vh]">
+                <img src="https://picsum.photos/1920/1080?1"
+                     class="w-full h-full object-cover">
+              </div>
+      
+              <!-- Content Half -->
+              <div class="h-[40vh] bg-white flex items-center justify-center px-10">
+                <div class="max-w-3xl text-center relative bottom-[50px]">
+                  <h1 class="text-4xl font-bold ">FIDO Developer Challenge</h1>
+                  <p class="text-gray-600 text-lg mt-5">
+                    Presentation on passwordless authentication protocols and secure identity verification systems.
+                  </p>
+                </div>
+              </div>
+            </section>
+      
+            <!-- Slide 2 -->
+            <section class="w-screen h-screen shrink-0 flex flex-col">
+              <div class="h-[65vh]">
+                <img src="https://picsum.photos/1920/1080?2"
+                     class="w-full h-full object-cover">
+              </div>
+      
+              <div class="h-1/2 bg-gray-100 flex items-center justify-center px-10">
+                <div class="max-w-3xl text-center relative bottom-[50px]">
+                  <h1 class="text-4xl font-bold mb-4">Privacy Enhanced Technologies(PET)</h1>
+                  <p class="text-gray-600 text-lg mt-5">
+                    In-depth technical session exploring privacy-preserving computation methods and their applications in finance.
+                  </p>
+                </div>
+              </div>
+            </section>
+      
+            <!-- Slide 3 -->
+            <section class="w-screen h-screen shrink-0 flex flex-col">
+              <div class="h-[65vh]">
+                <img src="https://picsum.photos/1920/1080?3"
+                     class="w-full h-full object-cover">
+              </div>
+      
+              <div class="h-1/2 bg-gray-200 flex items-center justify-center px-10">
+                <div class="max-w-3xl text-center relative bottom-[50px]">
+                  <h1 class="text-4xl font-bold mb-4">Digital Payments Security</h1>
+                  <p class="text-gray-600 text-lg mt-5">
+                    Technical session on advanced digital payment security frameworks and emerging threats in the financial sector.
+                  </p>
+                </div>
+              </div>
+            </section>
+      
+          </div>
+      
+          <!-- Dots Indicator -->
+          <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full"></span>
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full"></span>
+            <span class="dot w-3 h-3 bg-gray-400 rounded-full"></span>
+          </div>
+        </div>
+      
+    </div>
+    </center>
 
         
         <!--Footer-->
@@ -513,34 +745,47 @@
                     <div>
                         <ul>
                             <h2 class=" mb-10 text-xl "><b>Products</b></h2>
-                            <li>Em Auth</li>
-                            <li>Em Metrics</li>
-                            <li>FlickAnalytics</li>
+                            <li class="hover:text-white"><a href="#emauth">Em AuthM</a></li>
+                            <li><a href="https://m-analytics-rust.vercel.app/">Em Metrics</a></li>
+                            <li><a href="https://flickanalytics.in">FlickAnalytics</a></li>
                         </ul>
                     </div>
                         
                     <div>
                         <ul>
                             <h2 class=" mb-10 text-xl ">Solutions</h2>
-                            <li>Face & Eye Tracking</li>
-                            <li>Behavorial Biometrics</li>
+                            <li><a href="https://facetracker.indominuslabs.in/">Face & Eye Tracking</a></li>
+                            <li><a href="#behavorial_biometrics">Behavorial Biometrics</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <ul>
                             <h2 class=" mb-10 text-xl ">About Us</h2>
-                            <li>Awards</li>
-                            <li>Mentors</li>
+                            <li><a href="#talks">Awards</a></li>
+                            <li><a href="#mentors">Mentors</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <ul>
-                            <h2 class=" mb-10 text-xl ">Contact Us Us</h2>
+                            <h2 class=" mb-10 text-xl ">Contact Us</h2>
                             <li>+91 9884442082</li>
                             <li>contact@indominuslabs.in</li>
                             <li>Chennai</li>
+                            <div class="flex justify-start">
+                                <a href="#" target="_blank" class="text-white hover:text-pink-600 transition">
+                                    <i class="fa-brands fa-instagram text-2xl pr-5"></i>
+                                  </a>
+                                
+                                  <a href="https://www.linkedin.com/company/indominus-labs/" target="_blank" class="text-white hover:text-blue-700 transition">
+                                    <i class="fa-brands fa-linkedin text-2xl pr-5"></i>
+                                  </a>
+                                
+                                  <a href="https://github.com/indominus-labs/" target="_blank" class="text-white hover:text-gray-900 transition">
+                                    <i class="fa-brands fa-github text-2xl pr-5"></i>
+                                  </a>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -597,7 +842,265 @@
     }
   </script>
 
+<script>
+    const slider = document.getElementById("slider");
+    const dots = document.querySelectorAll(".dot");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+  
+    let count = 0;
+    const total = 3;
+    let interval;
+  
+    function updateSlide() {
+      slider.style.transform = `translateX(-${count * 100}vw)`;
+      dots.forEach((dot, i) =>
+        dot.classList.toggle("bg-black", i === count)
+      );
+    }
+  
+    function startAutoSlide() {
+      interval = setInterval(() => {
+        count = (count + 1) % total;
+        updateSlide();
+      }, 4000);
+    }
+  
+    function resetAutoSlide() {
+      clearInterval(interval);
+      startAutoSlide();
+    }
+  
+    // Next button
+    nextBtn.addEventListener("click", () => {
+      count = (count + 1) % total;
+      updateSlide();
+      resetAutoSlide();
+    });
+  
+    // Previous button
+    prevBtn.addEventListener("click", () => {
+      count = (count - 1 + total) % total;
+      updateSlide();
+      resetAutoSlide();
+    });
+  
+    // Initial load
+    updateSlide();
+    startAutoSlide();
+  </script>
+  
+  <script>
+    const menu = document.getElementById("megaMenu");
+    const content = document.getElementById("menuContent");
+  
+    const data = {
+      platform: `
+      <div class="flex gap-8 justify-between ">
+        <div>
+            <img src="images/platform.png" width="700px" class="relative right-[100px]">
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold pr-10 mb-4">Platform</h2>
+        <div class="text-black hover:text-cyan-600">
+            <h3 class="text-black hover:text-cyan-600 mb-2">Software Development</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Web application developemnt</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Mobile Application development</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">HealthTech</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">MedTech</h3>    
+            <h3 class="text-black hover:text-cyan-600 mb-2">Security trust</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">AI Intg. Software</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">ML Modeling</h3>    
+        </div>
+    </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="pr-10">
+            <h3 class="font-semibold">Identity Security</h3>
+            <p>Control privileged access across your organization.</p>
+          </div>
+          <div class="pr-5">
+            <h3 class="font-semibold">Access Management</h3>
+            <p>Secure users, endpoints, and cloud environments.</p>
+          </div>
+        </div>
 
+        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+                <h2 class="text-2xl font-bold mb-4">Products Overview</h2>
+                <p class="mb-6">
+                    Advanced products designed for security, AI, and analytics—driving smarter actions to enhance protection, insights, reliability, and innovation.
+                </p>
+                
+                </div>
+      </div>
+      `,
+      solutions: `
+      <div class="flex gap-8 justify-between">
+        <div>
+            <img src="images/solutions.png" width="700px" class="relative right-[100px]">
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold pr-10 mb-4">Solutions</h2>
+        <div class="text-black hover:text-cyan-600">
+            <h3 class="text-black hover:text-cyan-600 mb-2">EmAuth</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Em-Metrics</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">FlickAnalytics</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Behavorial Biometrics</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Face & Eue Tracking</h3>    
+        </div>
+    </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="pr-10">
+            <h3 class="font-semibold">Identity Security</h3>
+            <p>Control privileged access across your organization.</p>
+          </div>
+          <div class="pr-5">
+            <h3 class="font-semibold">Access Management</h3>
+            <p>Secure users, endpoints, and cloud environments.</p>
+          </div>
+        </div>
+
+        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+                <h2 class="text-2xl font-bold mb-4">Solutions Overview</h2>
+                <p class="mb-6">
+Harness the power of AI and enhance your security measures with our cutting-edge solutions.
+
+Tailored secured analytical solutions.                </p>
+                
+                </div>
+      </div>
+      `,
+      resources: `
+      <div class="flex gap-8 justify-between">
+        <div>
+            <img src="images/resources.png" width="700px" class="relative right-[100px]">
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold pr-10 mb-4">Resources</h2>
+        <div class="text-black hover:text-cyan-600">
+            <h3 class="text-black hover:text-cyan-600 mb-2">Documetnation</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Real-Life Studies</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Updation of the tech world</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Feedback from clients</h3>
+            <h3 class="text-black hover:text-cyan-600 mb-2">Analysing the core</h3>    
+        </div>
+    </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="pr-10">
+            <h3 class="font-semibold">Identity Security</h3>
+            <p>Control privileged access across your organization.</p>
+          </div>
+          <div class="pr-5">
+            <h3 class="font-semibold">Access Management</h3>
+            <p>Secure users, endpoints, and cloud environments.</p>
+          </div>
+        </div>
+
+        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+                <h2 class="text-2xl font-bold mb-4">Resources Overview</h2>
+                <p class="mb-6">
+                    Access expert insights, technical documentation, guides, and best practices designed to help you understand, implement, and optimize our solutions with confidence.</p>
+                
+                </div>
+      </div>
+      `,
+      about: `
+      <div class="flex gap-8 justify-between">
+        <div>
+            <img src="images/about-us.png" width="1900px" class="relative right-[100px]">
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold pr-10 mt-8 mb-2">Company Overview</h2>
+            <p>Indominus Labs is a technology-driven organization focused on building secure, scalable, and innovative digital solutions. We help businesses protect systems, data, and identities while enabling confident growth in a connected world.</p>
+    
+            <h2 class="text-2xl font-bold pr-10 mt-8 mb-2">Leadership Team</h2>
+            <p>Indominus Labs is a technology-driven organization focused on building secure, scalable, and innovative digital solutions. We help businesses protect systems, data, and identities while enabling confident growth in a connected world.</p>
+        
+        </div>
+
+
+        <div>
+            <h2 class="text-2xl font-bold pr-10 mt-8 mb-2">Trust & Security</h2>
+            <p>Indominus Labs is a technology-driven organization focused on building secure, scalable, and innovative digital solutions. We help businesses protect systems, data, and identities while enabling confident growth in a connected world.</p>
+            
+            <h2 class="text-2xl font-bold pr-10 mt-8 mb-2">Awards & Recognition</h2>
+            <p>Indominus Labs is a technology-driven organization focused on building secure, scalable, and innovative digital solutions. We help businesses protect systems, data, and identities while enabling confident growth in a connected world.</p>
+        
+        </div>
+
+        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-auto h-[400px]">
+                <h2 class="text-2xl font-bold mb-4">Resources Overview</h2>
+                <p class="mb-6">
+                    Access expert insights, technical documentation, guides, and best practices designed to help you understand, implement, and optimize our solutions with confidence.</p>
+                
+                </div>
+      </div>
+      `
+    };
+  
+    function openMenu(type, element) {
+    // Update content
+    content.innerHTML = data[type];
+    menu.classList.remove("hidden");
+
+    // Remove active color from all menu buttons
+    document.querySelectorAll(".menu-btn").forEach(btn => {
+      btn.classList.remove("menu-active");
+    });
+
+    // Add active color to clicked button
+    element.classList.add("menu-active");
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && !e.target.closest("nav")) {
+      menu.classList.add("hidden");
+
+      // Remove active state when menu closes
+      document.querySelectorAll(".menu-btn").forEach(btn => {
+        btn.classList.remove("menu-active");
+      });
+    }
+  });
+  </script>
+  
+  <script>
+    function openContact() {
+      document.getElementById("contactModal").classList.remove("hidden");
+    }
+  
+    function closeContact() {
+      document.getElementById("contactModal").classList.add("hidden");
+    }
+  
+    // Close when clicking outside the modal
+    document.getElementById("contactModal").addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeContact();
+      }
+    });
+  </script>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // stop page reload
+  
+      // Close contact modal
+      closeContact();
+  
+      // Reset form
+      this.reset();
+  
+      // Show success popup
+      document.getElementById("successPopup").classList.remove("hidden");
+    });
+  
+    function closeSuccess() {
+      document.getElementById("successPopup").classList.add("hidden");
+    }
+  </script>
+  
+  
         
 </body>
 
