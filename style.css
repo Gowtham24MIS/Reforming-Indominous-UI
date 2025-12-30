@@ -42,17 +42,21 @@ li{
 
 .line-container {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 10px;
   overflow: hidden;
+  bottom: 700px;
 }
 
 .moving-line {
   position: absolute;
   width: 400px;
   height: 10px;
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  background: linear-gradient(90deg, transparent, #7e38da, transparent);
   animation: moveX 4s linear infinite;
+}
+.menu-active {
+  color: #fb923c; /* Tailwind orange-400 */
 }
 
 @keyframes moveX {
@@ -76,8 +80,35 @@ li{
   font-size: 1.5rem;
   flex-shrink: 0;
   padding: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
 }
 
+.card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+  transform: translateY(-5px);
+}
+
+
+.image-fix {
+  image-rendering: -webkit-optimize-contrast;
+}
+@keyframes fadeGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+.fade-glow {
+  animation: fadeGlow 1.2s ease-out forwards;
+}
   
   
   
