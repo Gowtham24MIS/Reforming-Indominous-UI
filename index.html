@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="mobile.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/png" href="/indom.png">
     <title>Indominus Labs</title>
+
+    
+
 </head>
 
 <!-- <body style="background: radial-gradient(circle, #a46ae4 0%, #3a1d71 60%, #2c1556 100%);"> -->
@@ -19,39 +23,45 @@
     
     <!--This is the header of the web-->
         <div class="overflow-x-hidden">
-            <header class="text-gray-200 bg-cyan-800 flex justify-between w-full p-5 fixed z-50 top-0">
+          <header class="text-gray-200 bg-cyan-800 flex justify-between w-full p-5 fixed z-50 top-0">
   
-                <!-- Logo -->
-                <a href="#">
-                  <div class="flex gap-2 pl-5 ml-5 items-center">
-                    <img src="images/indom.png" width="20px" class="rounded-full">
-                    <h1 class="text-3xl font-bold">INDOMINUS LABS</h1>
-                  </div>
-                </a>
+            <!-- Logo -->
+            <a href="#">
+              <div class="flex gap-2 pl-5 ml-5 items-center">
+                <img src="images/indom.png" width="20px" class="rounded-full">
+                <h1 class="text-3xl font-bold">INDOMINUS LABS</h1>
+              </div>
+            </a>
+          
+            <!-- Hamburger Button (Only visible on mobile) -->
+            <div class="hamburger" onclick="toggleMobileMenu()" style="display: none; z-index: 70; position: relative;">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          
+            <!-- Navigation -->
+            <nav class="flex gap-8 pr-10 text-xl relative" id="mobileNav">
+              <button data-menu="platform" onclick="toggleSubMenu('platform')" class="menu-btn hover:text-orange-400">Platform</button>
+              <button data-menu="solutions" onclick="toggleSubMenu('solutions')" class="menu-btn hover:text-orange-400">Solutions</button>
+              <button data-menu="resources" onclick="toggleSubMenu('resources')" class="menu-btn hover:text-orange-400">Resources</button>
+              <button data-menu="about" onclick="toggleSubMenu('about')" class="menu-btn hover:text-orange-400">About</button>
+              <button onclick="openContact()" class="hover:text-orange-400">Contact Us</button>
               
-                <!-- Navigation -->
-                <nav class="flex gap-8 pr-10 text-xl relative">
-                  <button data-menu="platform" onclick="openMenu('platform', this)" class="menu-btn hover:text-orange-400">Platform</button>
-                  <button data-menu="solutions" onclick="openMenu('solutions', this)" class="menu-btn hover:text-orange-400">Solutions</button>
-                  <button data-menu="resources" onclick="openMenu('resources', this)" class="menu-btn hover:text-orange-400">Resources</button>
-                  <button data-menu="about" onclick="openMenu('about', this)" class="menu-btn hover:text-orange-400">About</button>
-                  <button onclick="openContact()" class="hover:text-orange-400">Contact Us</button>
-                  
-                </nav>
-              </header>
-
-              <!-- Mega Menu Overlay -->
-            <div id="megaMenu"
-                class="hidden fixed top-[90px] left-0 w-screen bg-white text-gray-800 shadow-2xl z-40 mx-5 rounded-2xl">
-            
-            <div class="max-w-7xl mx-auto  p-10">
-
-                <!-- LEFT CONTENT -->
-                <div id="menuContent" class="col-span-2 space-y-6">
-                <!-- Content injected by JS -->
-                </div>
+              <!-- Mobile Mega Menu (inside nav for mobile) -->
+              <div id="megaMenuMobile"></div>
+            </nav>
+          </header>
+          
+          <!-- Mobile Menu Overlay -->
+          <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+          
+          <!-- Desktop Mega Menu (outside for desktop) -->
+          <div id="megaMenu" class="hidden fixed top-[90px] left-0 w-full bg-white text-gray-800 shadow-2xl z-40 mx-5 rounded-2xl">
+            <div class="max-w-7xl mx-auto p-10">
+              <div id="menuContent" class="col-span-2 space-y-6"></div>
             </div>
-            </div>
+          </div>
 
             <!-- Contact Us Modal -->
 <div id="contactModal"
@@ -178,9 +188,9 @@
 
        
         <div>
-        <img src="images/main5.png" class="w-screen h-screen">
+        <img src="images/main5.png" class="w-full h-screen">
         <div class=" text-gray-800 z-5 relative p-10 bottom-[700px]">
-            <h1 class=" font-poppins text-5xl mt-10 font-bold leading-20 drop-shadow-ms" >
+            <h1 class=" font-poppins text-5xl mt-10 font-bold leading-20 " >
                 <b>           
                     Securing Digital Experiences <br>for a Smarter,<br> Connected Future
                 </b>
@@ -354,7 +364,7 @@
                 </div>
             </div>
 
-            <div class="bg-amber-400 text-black w-auto mt-40 p-7 rounded-xl flex justify-around">
+            <div class="bg-amber-400 text-black w-auto mt-40 p-7 rounded-xl flex justify-around shadow-2xl">
                 <div>
                     <h1 class="text-2xl"><b>100%</b></h1>
                     <p>Paswordless free</p>
@@ -596,12 +606,12 @@
           </div>
           
           <!--Other More Products-->
-          <div class="w-full h-screen 
+          <div class="w-full h-full 
           bg-[url('./images/bg2.png')] 
           bg-cover bg-center bg-no-repeat mb-20">
             <h2 class="text-5xl text-cyan-800"><b>Other More Products</b></h2>
-            <div class="flex justify-around my-20" id="other_products">
-                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+            <div class="flex justify-around my-20 " id="other_products">
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl shadow-2xl ">
                     <img src="images/Cam.png" class="w-full bg-white">
                     <h3 class="text-2xl mt-10 text-center"><b>Flick Analytics</b></h3>
                     <div class="bg-cyan-300 h-1 w-auto my-5"></div>
@@ -609,7 +619,7 @@
                     <a href="https://flickanalytics.in/"><h2 class="bg-cyan-700 inline-block p-2 rounded-2xl text-cyan-300 my-5 hover:bg-cyan-900 hover:text-white"><b>Learn More</b></h2></a>
                 </div>
 
-                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl shadow-2xl">
                     <img src="images/m3logo.png" class="w-full bg-white">
                     <h3 class="text-2xl my-10 text-center"><b>Em-Metrices</b></h3>
                     <div class="bg-cyan-300 h-1 w-auto my-5"></div>
@@ -617,7 +627,7 @@
                     <a href="https://m-analytics-rust.vercel.app/"><h2 class="bg-cyan-700 inline-block p-2 rounded-2xl text-cyan-300 my-5 hover:bg-cyan-900 hover:text-white"><b>Learn More</b></h2></a>
                 </div>
 
-                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl">
+                <div class="bg-cyan-500 p-2 w-[300px] inline-block rounded-xl shadow-2xl">
                     <img src="images/Robotface.svg" class="w-full bg-white">
                     <h3 class="text-2xl my-10 text-center"><b>Face & Eye Tracking</b></h3>
                     <div class="bg-cyan-300 h-1 w-auto my-5"></div>
@@ -631,10 +641,10 @@
         
 
     <!--Talks & Rewards-->
-    <div class="bg-white py-10 min-h-screen">
+    <div class=" py-10 min-h-screen">
     <h1 class="text-cyan-700 text-5xl my-10" id="talks"><b>Talks & Rewards</b></h1>
         <!-- Fullscreen Carousel -->
-        <div class="relative w-screen h-screen overflow-hidden">
+        <div class="relative w-full h-screen overflow-hidden">
 
             <!-- Previous Button -->
             <button id="prevBtn"
@@ -661,7 +671,7 @@
             class="flex w-full h-screen transition-transform duration-700 ease-in-out">
       
             <!-- Slide 1 -->
-            <section class="w-screen h-screen shrink-0 flex flex-col">
+            <section class="w-full h-screen shrink-0 flex flex-col">
               <!-- Image Half -->
               <div class="h-[65vh]">
                 <img src="https://picsum.photos/1920/1080?1"
@@ -680,13 +690,13 @@
             </section>
       
             <!-- Slide 2 -->
-            <section class="w-screen h-screen shrink-0 flex flex-col">
+            <section class="w-full h-screen shrink-0 flex flex-col">
               <div class="h-[65vh]">
                 <img src="https://picsum.photos/1920/1080?2"
                      class="w-full h-full object-cover">
               </div>
       
-              <div class="h-1/2 bg-gray-100 flex items-center justify-center px-10">
+              <div class="h-1/2 bg-white flex items-center justify-center px-10">
                 <div class="max-w-3xl text-center relative bottom-[50px]">
                   <h1 class="text-4xl font-bold mb-4">Privacy Enhanced Technologies(PET)</h1>
                   <p class="text-gray-600 text-lg mt-5">
@@ -697,13 +707,13 @@
             </section>
       
             <!-- Slide 3 -->
-            <section class="w-screen h-screen shrink-0 flex flex-col">
+            <section class="w-full h-screen shrink-0 flex flex-col">
               <div class="h-[65vh]">
                 <img src="https://picsum.photos/1920/1080?3"
                      class="w-full h-full object-cover">
               </div>
       
-              <div class="h-1/2 bg-gray-200 flex items-center justify-center px-10">
+              <div class="h-1/2 bg-white flex items-center justify-center px-10">
                 <div class="max-w-3xl text-center relative bottom-[50px]">
                   <h1 class="text-4xl font-bold mb-4">Digital Payments Security</h1>
                   <p class="text-gray-600 text-lg mt-5">
@@ -792,7 +802,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="bg-white w-screen h-1"></div>
+                <div class="bg-white w-full h-1"></div>
                 <div class="p-5 text-center">
                     <h2>&copy; indominuslabs@2025 all rights reserved</h2>
                 </div>
@@ -894,117 +904,176 @@
   </script>
   
   <script>
-    const menu = document.getElementById("megaMenu");
-    const content = document.getElementById("menuContent");
-  
-    const data = {
-      platform: `
-      <div class="flex gap-8 justify-between ">
-        <div>
-            <img src="images/platform.png" width="700px" class="relative right-[100px]">
-        </div>
-        <div>
-            <h2 class="text-2xl font-bold pr-10 mb-4">Platform</h2>
-        <div class="text-black hover:text-cyan-600">
-            <h3 class="text-black hover:text-cyan-600 mb-2">Software Development</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Web application developemnt</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Mobile Application development</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">HealthTech</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">MedTech</h3>    
-            <h3 class="text-black hover:text-cyan-600 mb-2">Security trust</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">AI Intg. Software</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">ML Modeling</h3>    
-        </div>
-    </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="pr-10">
-            <h3 class="font-semibold">Identity Security</h3>
-            <p>Control privileged access across your organization.</p>
-          </div>
-          <div class="pr-5">
-            <h3 class="font-semibold">Access Management</h3>
-            <p>Secure users, endpoints, and cloud environments.</p>
-          </div>
-        </div>
+    // ========== HAMBURGER MENU ==========
+  function toggleMobileMenu() {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    if (!nav || !hamburger || !overlay) return;
+    
+    nav.classList.toggle('mobile-menu-open');
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    // Close submenu when closing hamburger
+    if (!nav.classList.contains('mobile-menu-open')) {
+      const megaMenuMobile = document.getElementById('megaMenuMobile');
+      if (megaMenuMobile) {
+        megaMenuMobile.classList.remove('active');
+        megaMenuMobile.innerHTML = '';
+      }
+    }
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = nav.classList.contains('mobile-menu-open') ? 'hidden' : '';
+  }
 
-        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
-                <h2 class="text-2xl font-bold mb-4">Products Overview</h2>
-                <p class="mb-6">
-                    Advanced products designed for security, AI, and analytics—driving smarter actions to enhance protection, insights, reliability, and innovation.
-                </p>
-                
-                </div>
-      </div>
+  // Close menu when clicking overlay - ADD THIS PART
+  const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', function() {
+      toggleMobileMenu();
+    });
+  }
+  
+    // ========== MEGA MENU DATA ==========
+    const menuData = {
+      platform: `
+        <h2 class="text-xl font-bold mb-3">Platform</h2>
+        <div class="space-y-2">
+          <h3>Software Development</h3>
+          <h3>Web Application Development</h3>
+          <h3>Mobile Application Development</h3>
+          <h3>HealthTech</h3>
+          <h3>MedTech</h3>
+          <h3>Security Trust</h3>
+          <h3>AI Integration Software</h3>
+          <h3>ML Modeling</h3>
+        </div>
       `,
       solutions: `
-      <div class="flex gap-8 justify-between">
-        <div>
-            <img src="images/solutions.png" width="700px" class="relative right-[100px]">
+        <h2 class="text-xl font-bold mb-3">Solutions</h2>
+        <div class="space-y-2">
+          <h3>EmAuth</h3>
+          <h3>Em-Metrics</h3>
+          <h3>FlickAnalytics</h3>
+          <h3>Behavioral Biometrics</h3>
+          <h3>Face & Eye Tracking</h3>
         </div>
-        <div>
-            <h2 class="text-2xl font-bold pr-10 mb-4">Solutions</h2>
-        <div class="text-black hover:text-cyan-600">
-            <h3 class="text-black hover:text-cyan-600 mb-2">EmAuth</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Em-Metrics</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">FlickAnalytics</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Behavorial Biometrics</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Face & Eue Tracking</h3>    
-        </div>
-    </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="pr-10">
-            <h3 class="font-semibold">Identity Security</h3>
-            <p>Control privileged access across your organization.</p>
-          </div>
-          <div class="pr-5">
-            <h3 class="font-semibold">Access Management</h3>
-            <p>Secure users, endpoints, and cloud environments.</p>
-          </div>
-        </div>
-
-        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
-                <h2 class="text-2xl font-bold mb-4">Solutions Overview</h2>
-                <p class="mb-6">
-Harness the power of AI and enhance your security measures with our cutting-edge solutions.
-
-Tailored secured analytical solutions.                </p>
-                
-                </div>
-      </div>
       `,
       resources: `
-      <div class="flex gap-8 justify-between">
-        <div>
-            <img src="images/resources.png" width="700px" class="relative right-[100px]">
+        <h2 class="text-xl font-bold mb-3">Resources</h2>
+        <div class="space-y-2">
+          <h3>Documentation</h3>
+          <h3>Real-Life Studies</h3>
+          <h3>Tech World Updates</h3>
+          <h3>Client Feedback</h3>
+          <h3>Core Analysis</h3>
         </div>
-        <div>
+      `,
+      about: `
+        <h2 class="text-xl font-bold mb-3">About Us</h2>
+        <div class="space-y-2">
+          <h3>Company Overview</h3>
+          <p>Technology-driven organization focused on secure, scalable solutions.</p>
+          <h3>Leadership Team</h3>
+          <h3>Trust & Security</h3>
+          <h3>Awards & Recognition</h3>
+        </div>
+      `
+    };
+  
+    const menuDataDesktop = {
+      platform: `
+        <div class="flex gap-8 justify-between">
+          <div><img src="images/platform.png" width="700px" class="relative right-[100px]"></div>
+          <div>
+            <h2 class="text-2xl font-bold pr-10 mb-4">Platform</h2>
+            <div class="text-black hover:text-cyan-600">
+              <h3 class="text-black hover:text-cyan-600 mb-2">Software Development</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Web Application Development</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Mobile Application Development</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">HealthTech</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">MedTech</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Security Trust</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">AI Intg. Software</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">ML Modeling</h3>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="pr-10">
+              <h3 class="font-semibold">Identity Security</h3>
+              <p>Control privileged access across your organization.</p>
+            </div>
+            <div class="pr-5">
+              <h3 class="font-semibold">Access Management</h3>
+              <p>Secure users, endpoints, and cloud environments.</p>
+            </div>
+          </div>
+          <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+            <h2 class="text-2xl font-bold mb-4">Products Overview</h2>
+            <p class="mb-6">Advanced products designed for security, AI, and analytics.</p>
+          </div>
+        </div>
+      `,
+      solutions: `
+        <div class="flex gap-8 justify-between">
+          <div><img src="images/solutions.png" width="700px" class="relative right-[100px]"></div>
+          <div>
+            <h2 class="text-2xl font-bold pr-10 mb-4">Solutions</h2>
+            <div class="text-black hover:text-cyan-600">
+              <h3 class="text-black hover:text-cyan-600 mb-2">EmAuth</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Em-Metrics</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">FlickAnalytics</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Behavioral Biometrics</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Face & Eye Tracking</h3>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="pr-10">
+              <h3 class="font-semibold">Identity Security</h3>
+              <p>Control privileged access across your organization.</p>
+            </div>
+            <div class="pr-5">
+              <h3 class="font-semibold">Access Management</h3>
+              <p>Secure users, endpoints, and cloud environments.</p>
+            </div>
+          </div>
+          <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+            <h2 class="text-2xl font-bold mb-4">Solutions Overview</h2>
+            <p class="mb-6">Harness AI and enhance security with cutting-edge solutions.</p>
+          </div>
+        </div>
+      `,
+      resources: `
+        <div class="flex gap-8 justify-between">
+          <div><img src="images/resources.png" width="700px" class="relative right-[100px]"></div>
+          <div>
             <h2 class="text-2xl font-bold pr-10 mb-4">Resources</h2>
-        <div class="text-black hover:text-cyan-600">
-            <h3 class="text-black hover:text-cyan-600 mb-2">Documetnation</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Real-Life Studies</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Updation of the tech world</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Feedback from clients</h3>
-            <h3 class="text-black hover:text-cyan-600 mb-2">Analysing the core</h3>    
-        </div>
-    </div>
-        <div class="grid grid-cols-2 gap-6">
-          <div class="pr-10">
-            <h3 class="font-semibold">Identity Security</h3>
-            <p>Control privileged access across your organization.</p>
+            <div class="text-black hover:text-cyan-600">
+              <h3 class="text-black hover:text-cyan-600 mb-2">Documentation</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Real-Life Studies</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Tech World Updates</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Client Feedback</h3>
+              <h3 class="text-black hover:text-cyan-600 mb-2">Core Analysis</h3>
+            </div>
           </div>
-          <div class="pr-5">
-            <h3 class="font-semibold">Access Management</h3>
-            <p>Secure users, endpoints, and cloud environments.</p>
+          <div class="grid grid-cols-2 gap-6">
+            <div class="pr-10">
+              <h3 class="font-semibold">Identity Security</h3>
+              <p>Control privileged access across your organization.</p>
+            </div>
+            <div class="pr-5">
+              <h3 class="font-semibold">Access Management</h3>
+              <p>Secure users, endpoints, and cloud environments.</p>
+            </div>
+          </div>
+          <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
+            <h2 class="text-2xl font-bold mb-4">Resources Overview</h2>
+            <p class="mb-6">Expert insights and documentation to optimize our solutions.</p>
           </div>
         </div>
-
-        <div class="bg-orange-500 text-white p-8 pr-10 rounded-xl w-[500px] h-auto">
-                <h2 class="text-2xl font-bold mb-4">Resources Overview</h2>
-                <p class="mb-6">
-                    Access expert insights, technical documentation, guides, and best practices designed to help you understand, implement, and optimize our solutions with confidence.</p>
-                
-                </div>
-      </div>
       `,
       about: `
       <div class="flex gap-8 justify-between">
@@ -1038,72 +1107,179 @@ Tailored secured analytical solutions.                </p>
                 </div>
       </div>
       `
+
     };
   
+    // ========== TOGGLE SUBMENU (MOBILE) ==========
+    function toggleSubMenu(type) {
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Mobile: Show submenu inside hamburger
+        const megaMenuMobile = document.getElementById('megaMenuMobile');
+        
+        if (megaMenuMobile.classList.contains('active') && megaMenuMobile.dataset.current === type) {
+          // Close if clicking same menu
+          megaMenuMobile.classList.remove('active');
+          megaMenuMobile.innerHTML = '';
+          megaMenuMobile.dataset.current = '';
+        } else {
+          // Open/switch to new menu
+          megaMenuMobile.innerHTML = menuData[type] || '';
+          megaMenuMobile.classList.add('active');
+          megaMenuMobile.dataset.current = type;
+        }
+      } else {
+        // Desktop: Use original openMenu function
+        openMenu(type, event.target);
+      }
+    }
+  
+    // ========== OPEN MENU (DESKTOP) ==========
     function openMenu(type, element) {
-    // Update content
-    content.innerHTML = data[type];
-    menu.classList.remove("hidden");
-
-    // Remove active color from all menu buttons
-    document.querySelectorAll(".menu-btn").forEach(btn => {
-      btn.classList.remove("menu-active");
-    });
-
-    // Add active color to clicked button
-    element.classList.add("menu-active");
-  }
-
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !e.target.closest("nav")) {
-      menu.classList.add("hidden");
-
-      // Remove active state when menu closes
+      const menu = document.getElementById("megaMenu");
+      const content = document.getElementById("menuContent");
+      
+      if (content && menuDataDesktop[type]) {
+        content.innerHTML = menuDataDesktop[type];
+      }
+      
+      if (menu) {
+        menu.classList.remove("hidden");
+      }
+  
+      // Remove active from all, add to clicked
       document.querySelectorAll(".menu-btn").forEach(btn => {
         btn.classList.remove("menu-active");
       });
+      if (element) {
+        element.classList.add("menu-active");
+      }
     }
-  });
+  
+    // Close desktop menu when clicking outside
+    document.addEventListener("click", (e) => {
+      const menu = document.getElementById("megaMenu");
+      if (window.innerWidth > 768 && menu && !menu.contains(e.target) && !e.target.closest("nav")) {
+        menu.classList.add("hidden");
+        document.querySelectorAll(".menu-btn").forEach(btn => {
+          btn.classList.remove("menu-active");
+        });
+      }
+    });
+  
+    // ========== CONTACT MODAL ==========
+    // ========== CONTACT MODAL ==========
+function openContact() {
+  const modal = document.getElementById("contactModal");
+  if (modal) modal.classList.remove("hidden");
+  
+  // Close mobile menu if open
+  if (window.innerWidth <= 768) {
+    const nav = document.getElementById('mobileNav');
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const megaMenuMobile = document.getElementById('megaMenuMobile');
+    
+    if (nav) nav.classList.remove('mobile-menu-open');
+    if (hamburger) hamburger.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    if (megaMenuMobile) {
+      megaMenuMobile.classList.remove('active');
+      megaMenuMobile.innerHTML = '';
+    }
+    document.body.style.overflow = '';
+  }
+}
+  
+    function closeContact() {
+      const modal = document.getElementById("contactModal");
+      if (modal) modal.classList.add("hidden");
+    }
+  
+    const contactModal = document.getElementById("contactModal");
+    if (contactModal) {
+      contactModal.addEventListener("click", function (e) {
+        if (e.target === this) closeContact();
+      });
+    }
+  
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        closeContact();
+        this.reset();
+        const successPopup = document.getElementById("successPopup");
+        if (successPopup) successPopup.classList.remove("hidden");
+      });
+    }
+  
+    function closeSuccess() {
+      const successPopup = document.getElementById("successPopup");
+      if (successPopup) successPopup.classList.add("hidden");
+    }
   </script>
   
   <script>
-    function openContact() {
-      document.getElementById("contactModal").classList.remove("hidden");
-    }
-  
-    function closeContact() {
-      document.getElementById("contactModal").classList.add("hidden");
-    }
-  
-    // Close when clicking outside the modal
-    document.getElementById("contactModal").addEventListener("click", function (e) {
-      if (e.target === this) {
-        closeContact();
+    // Mobile Slider Visibility Fix
+    document.addEventListener('DOMContentLoaded', function() {
+      // Force visibility on mobile
+      if (window.innerWidth <= 768) {
+        
+        // Find the slider section
+        const sliderSection = document.querySelector('center > div.w-full.h-screen');
+        
+        if (sliderSection) {
+          sliderSection.style.display = 'block';
+          sliderSection.style.visibility = 'visible';
+          sliderSection.style.opacity = '1';
+          sliderSection.style.height = 'auto';
+          sliderSection.style.minHeight = '500px';
+          sliderSection.style.zIndex = '10';
+        }
+        
+        // Find the track
+        const track = document.getElementById('track');
+        if (track) {
+          track.style.display = 'flex';
+          track.style.visibility = 'visible';
+          track.style.opacity = '1';
+          track.style.overflowX = 'auto';
+          track.style.transform = 'none';
+          track.style.transition = 'none';
+        }
+        
+        // Find all cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          card.style.display = 'flex';
+          card.style.visibility = 'visible';
+          card.style.opacity = '1';
+          card.style.minWidth = '280px';
+          card.style.flexShrink = '0';
+        });
+        
+        // Hide prev/next buttons
+        const prevBtn = document.querySelector('button[onclick="prev()"]');
+        const nextBtn = document.querySelector('button[onclick="next()"]');
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        
+        console.log('Mobile slider fix applied');
       }
     });
-  </script>
-
-<script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // stop page reload
-  
-      // Close contact modal
-      closeContact();
-  
-      // Reset form
-      this.reset();
-  
-      // Show success popup
-      document.getElementById("successPopup").classList.remove("hidden");
+    
+    window.addEventListener('resize', function() {
+      if (window.innerWidth <= 768) {
+        const track = document.getElementById('track');
+        if (track) {
+          track.style.transform = 'none';
+          track.style.transition = 'none';
+        }
+      }
     });
-  
-    function closeSuccess() {
-      document.getElementById("successPopup").classList.add("hidden");
-    }
-  </script>
-  
-  
+    </script>
         
 </body>
 
@@ -1112,5 +1288,5 @@ Tailored secured analytical solutions.                </p>
   
 </html>
 
-<!--<div class="bg-white w-screen h-1"></div>
+<!--<div class="bg-white w-full h-1"></div>
 -->
