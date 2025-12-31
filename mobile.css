@@ -1,0 +1,1071 @@
+/* ========================================
+   MOBILE RESPONSIVE STYLES WITH HAMBURGER MENU
+   Add this file AFTER output.css in HTML
+   ======================================== */
+
+/* Tablets and Mobile (Max-width: 768px) */
+@media (max-width: 768px) {
+  
+  /* ===== HEADER WITH HAMBURGER ===== */
+  header {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+  }
+
+  header .flex.gap-2 {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  header h1 {
+    font-size: 1.3rem !important;
+  }
+
+  header img {
+    width: 15px !important;
+  }
+
+  /* Hamburger Button */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 70;
+    position: relative;
+    pointer-events: auto !important;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  /* Navigation - Hidden by default on mobile */
+  header nav {
+    position: fixed !important;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(135deg, #0e7490 0%, #155e75 100%) !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 100px 20px 30px 20px !important;
+    text-align: left !important;
+    font-size: 1.1rem !important;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 100 !important;
+    overflow-y: auto;
+  }
+
+  /* Navigation Open State */
+  header nav.mobile-menu-open {
+    right: 0 !important;
+  }
+
+  header nav button,
+  header nav a {
+    width: 100% !important;
+    padding: 15px 15px !important;
+    text-align: left !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    cursor: pointer !important;
+    font-size: 1.1rem !important;
+    display: block !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 101 !important;
+  }
+
+  header nav button:hover,
+  header nav a:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    padding-left: 25px !important;
+    color: #fbbf24 !important;
+  }
+
+  /* Mega menu content inside mobile nav */
+  header nav #megaMenuMobile {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    color: #333 !important;
+    max-height: 400px;
+    overflow-y: auto;
+    pointer-events: auto !important;
+  }
+
+  header nav #megaMenuMobile.active {
+    display: block;
+  }
+
+  header nav #megaMenuMobile h2,
+  header nav #megaMenuMobile h3 {
+    color: #0e7490 !important;
+    font-size: 1rem;
+    margin: 8px 0;
+    opacity: 1 !important;
+  }
+
+  header nav #megaMenuMobile p {
+    color: #666 !important;
+    font-size: 0.9rem;
+    margin: 5px 0;
+    opacity: 1 !important;
+  }
+
+  header nav #megaMenuMobile img {
+    display: none;
+  }
+
+  /* Overlay for mobile menu */
+  .mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 45 !important;
+    pointer-events: none;
+  }
+
+  .mobile-menu-overlay.active {
+    display: block;
+    pointer-events: auto;
+  }
+  
+  /* Make sure nav is ABOVE overlay */
+  header {
+    z-index: 100 !important;
+  }
+  
+  header nav {
+    z-index: 100 !important;
+  }
+
+  /* ===== MEGA MENU ===== */
+  #megaMenu {
+    position: fixed !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 10px !important;
+    max-height: calc(100vh - 90px) !important;
+    overflow-y: auto !important;
+    z-index: 60 !important;
+    width: calc(100% - 20px) !important;
+  }
+
+  #menuContent {
+    padding: 20px 15px !important;
+  }
+
+  #menuContent .flex {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  #menuContent img {
+    width: 100% !important;
+    max-width: 250px !important;
+    right: 0 !important;
+    position: relative !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  #menuContent .grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  #menuContent > div > div {
+    width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 20px;
+  }
+
+  #menuContent .bg-orange-500 {
+    width: 100% !important;
+    margin-top: 20px;
+    padding: 20px 15px !important;
+  }
+
+  #menuContent h2,
+  #menuContent h3 {
+    font-size: 1.2rem !important;
+  }
+
+  #menuContent p {
+    font-size: 0.95rem !important;
+  }
+
+  /* ===== CONTACT MODAL ===== */
+  #contactModal {
+    z-index: 200 !important;
+    position: fixed !important;
+    display: flex !important;
+  }
+  
+  #contactModal.hidden {
+    display: none !important;
+  }
+
+  #contactModal > div {
+    flex-direction: column !important;
+    width: 90% !important;
+    max-width: 500px;
+    padding: 20px !important;
+    margin: 20px;
+    position: relative !important;
+    z-index: 201 !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+
+  #contactModal img {
+    width: 150px !important;
+    margin: 0 auto 20px;
+  }
+
+  #contactModal > div > div:last-child {
+    width: 100% !important;
+  }
+
+  #contactModal h2 {
+    font-size: 1.5rem !important;
+    margin-top: 10px !important;
+  }
+
+  #contactModal button[onclick="closeContact()"] {
+    z-index: 202 !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 2rem !important;
+    background: white !important;
+    border-radius: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+  }
+  
+  /* Contact form inputs on mobile */
+  #contactModal input,
+  #contactModal textarea {
+    font-size: 16px !important;
+  }
+  
+  #contactModal button[type="submit"] {
+    font-size: 1rem !important;
+  }
+  
+  /* Success popup */
+  #successPopup {
+    z-index: 250 !important;
+  }
+  
+  #successPopup.hidden {
+    display: none !important;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .fade-glow {
+    height: auto !important;
+    min-height: 100vh;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .fade-glow img {
+    height: 50vh !important;
+    object-fit: cover;
+  }
+
+  .fade-glow > div > div {
+    bottom: auto !important;
+    position: relative !important;
+    padding: 20px !important;
+    top: 0 !important;
+  }
+
+  .fade-glow h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    margin-top: 20px !important;
+  }
+
+  .fade-glow h1 b {
+    display: block;
+  }
+
+  .fade-glow p {
+    font-size: 1rem !important;
+    margin-top: 10px !important;
+  }
+
+  .line-container {
+    width: 100% !important;
+    bottom: auto !important;
+    margin-top: 20px;
+    position: relative !important;
+  }
+
+  /* ===== PRODUCTS SECTION - FIX Z-INDEX & POSITIONING ===== */
+  body > div > div:nth-child(4) {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 40px 0 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background: white !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Products heading */
+  body > div > div:nth-child(4) > div > div:first-child {
+    margin-bottom: 30px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    display: block !important;
+  }
+  
+  /* Products wrapper */
+  body > div > div:nth-child(4) > div {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Products container - 3 in first row, 2 in second row */
+  .flex.justify-around.pt-20 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    padding: 20px 10px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Make last 2 items center aligned */
+  .flex.justify-around.pt-20 > a:nth-child(4),
+  .flex.justify-around.pt-20 > a:nth-child(5) {
+    grid-column: span 1 !important;
+    display: flex !important;
+    visibility: visible !important;
+  }
+
+  /* Center the last row (4th and 5th items) */
+  .flex.justify-around.pt-20 > a:nth-child(4) {
+    grid-column-start: 1 !important;
+    margin-left: auto !important;
+    margin-right: 5px !important;
+  }
+
+  .flex.justify-around.pt-20 > a:nth-child(5) {
+    grid-column-start: 3 !important;
+    margin-right: auto !important;
+    margin-left: 5px !important;
+  }
+
+  /* Each product link */
+  .flex.justify-around.pt-20 > a {
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+    z-index: 10 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Each product card - Make smaller to fit all 5 on screen */
+  .flex.justify-around.pt-20 > a > div {
+    width: 100% !important;
+    max-width: 180px !important;
+    height: auto !important;
+    min-height: 280px !important;
+    padding: 15px 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: relative !important;
+    z-index: 10 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Product card images - Make smaller */
+  .flex.justify-around.pt-20 > a > div > center > div {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .flex.justify-around.pt-20 > a > div > center > div > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  /* Product card text - Make smaller */
+  .flex.justify-around.pt-20 > a > div h2 {
+    font-size: 1rem !important;
+  }
+  
+  .flex.justify-around.pt-20 > a > div p {
+    font-size: 0.75rem !important;
+  }
+  
+  .flex.justify-around.pt-20 > a > div .bg-white {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .flex.justify-around.pt-20 > a > div > div:last-child {
+    padding: 8px 5px !important;
+  }
+
+  /* ===== EMAUTH SECTION - FIX POSITIONING ===== */
+  #emauth {
+    min-height: auto !important;
+    padding: 40px 20px !important;
+    margin: 40px 0 !important;
+    position: relative !important;
+    z-index: auto !important;
+    transform: none !important;
+  }
+
+  #emauth .flex.justify-around {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  #emauth .w-\[600px\] {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+
+  #emauth h1 {
+    font-size: 2.5rem !important;
+    text-align: center;
+    margin-top: 20px !important;
+  }
+
+  #emauth .pt-10.flex {
+    padding-top: 20px !important;
+    flex-direction: column !important;
+  }
+
+  #emauth h2 {
+    font-size: 1.3rem !important;
+    text-align: center;
+    padding: 0 10px !important;
+  }
+
+  #emauth .w-\[400px\] {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  #emauth .bg-amber-400 {
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 20px !important;
+    margin-top: 30px !important;
+  }
+
+  #emauth .bg-amber-400 > div {
+    text-align: center;
+  }
+
+  #emauth .mt-40 {
+    margin-top: 30px !important;
+  }
+
+  /* ===== BEHAVIORAL BIOMETRICS SECTION - FIX POSITIONING ===== */
+  #behavorial_biometrics {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 40px 0 !important;
+    position: relative !important;
+    z-index: auto !important;
+    transform: none !important;
+  }
+
+  #behavorial_biometrics .flex.justify-around:first-child {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  #behavorial_biometrics .w-\[600px\] {
+    width: 100% !important;
+    padding: 0 20px;
+  }
+
+  #behavorial_biometrics h1 {
+    font-size: 2rem !important;
+    text-align: center;
+    padding: 10px !important;
+  }
+
+  #behavorial_biometrics .pt-5.flex {
+    padding-top: 10px !important;
+  }
+
+  #behavorial_biometrics h2 {
+    font-size: 1.2rem !important;
+    text-align: center;
+  }
+
+  #behavorial_biometrics .w-\[400px\] {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  #behavorial_biometrics > h2 {
+    font-size: 1.5rem !important;
+    padding: 20px !important;
+  }
+
+  #behavorial_biometrics .flex.justify-around:last-of-type {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 0 20px;
+  }
+
+  #behavorial_biometrics .bg-amber-400 {
+    width: 100% !important;
+    max-width: 350px;
+  }
+
+  /* ===== FEATURES CAROUSEL SECTION (After Schedule Demo) ===== */
+  /* Target the entire section */
+  center > div.w-full.h-screen {
+    height: auto !important;
+    min-height: 500px !important;
+    padding: 40px 15px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* All divs inside center */
+  center > div.w-full.h-screen > div {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* Behavioral Biometrics badge */
+  center > div.w-full.h-screen > div:first-child h2 {
+    font-size: 1.1rem !important;
+    padding: 10px 20px !important;
+    display: inline-block !important;
+    visibility: visible !important;
+  }
+
+  /* Features & UseCases heading */
+  center > div.w-full.h-screen > h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+    text-align: center !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* Schedule Demo button container */
+  center > div.w-full.h-screen > div:nth-child(3) {
+    display: block !important;
+    visibility: visible !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* Schedule Demo button */
+  center > div.w-full.h-screen > div:nth-child(3) a h2 {
+    font-size: 1rem !important;
+    padding: 12px 24px !important;
+    display: inline-block !important;
+    visibility: visible !important;
+  }
+
+  /* Carousel container */
+  center > div.w-full.h-screen > div.relative {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    position: relative !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+  }
+
+  /* Remove prev/next buttons on mobile */
+  center > div.w-full.h-screen > div.relative button {
+    display: none !important;
+  }
+
+  /* Carousel viewport - the overflow div */
+  center > div.w-full.h-screen > div.relative > div.overflow-hidden {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    display: block !important;
+    -webkit-overflow-scrolling: touch !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+  }
+
+  /* Track with cards */
+  #track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 15px !important;
+    padding: 20px 10px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    width: auto !important;
+  }
+
+  #track .card {
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .card {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+    height: auto !important;
+    min-height: 350px !important;
+    padding: 20px !important;
+    font-size: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: white !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .card i {
+    font-size: 2.5rem !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .card h3 {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+    display: block !important;
+    visibility: visible !important;
+    padding: 0 10px !important;
+  }
+
+  .card p {
+    font-size: 0.95rem !important;
+    text-align: center !important;
+    display: block !important;
+    visibility: visible !important;
+    padding: 0 10px !important;
+  }
+
+  .card .bg-amber-600 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: 2px !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  /* Hide navigation arrows on mobile */
+  button[onclick="prev()"],
+  button[onclick="next()"] {
+    display: none !important;
+  }
+
+  /* ===== OTHER PRODUCTS SECTION ===== */
+  .bg-\[url\(\'\.\/images\/bg2\.png\'\)\] {
+    padding: 40px 20px !important;
+    position: relative !important;
+    z-index: auto !important;
+  }
+
+  .bg-\[url\(\'\.\/images\/bg2\.png\'\)\] h2 {
+    font-size: 2rem !important;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  #other_products {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    padding: 20px !important;
+    margin: 20px 0 !important;
+  }
+
+  #other_products .bg-cyan-500 {
+    width: 100% !important;
+    max-width: 350px;
+  }
+
+  /* ===== TALKS & REWARDS SECTION ===== */
+  #talks {
+    font-size: 2rem !important;
+    padding: 0 20px !important;
+    text-align: center;
+    margin: 30px 0 !important;
+  }
+
+  .relative.w-full.h-screen.overflow-hidden {
+    height: 70vh !important;
+    position: relative !important;
+  }
+
+  #slider {
+    height: 70vh !important;
+  }
+
+  #slider section {
+    height: 70vh !important;
+  }
+
+  #slider .h-\[65vh\] {
+    height: 45vh !important;
+  }
+
+  #slider .h-1\/2,
+  #slider .h-\[40vh\] {
+    height: 25vh !important;
+    padding: 20px 15px !important;
+  }
+
+  #slider h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  #slider p {
+    font-size: 0.9rem !important;
+    margin-top: 10px !important;
+  }
+
+  #slider .max-w-3xl {
+    bottom: 20px !important;
+  }
+
+  /* Fix navigation buttons positioning */
+  #prevBtn,
+  #nextBtn {
+    padding: 10px 14px !important;
+    font-size: 1.2rem !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 30 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #prevBtn {
+    left: 10px !important;
+    right: auto !important;
+  }
+
+  #nextBtn {
+    right: 10px !important;
+    left: auto !important;
+  }
+
+  /* Dots indicator */
+  .absolute.bottom-6 {
+    bottom: 15px !important;
+    z-index: 30 !important;
+  }
+
+  .absolute.bottom-6 .dot {
+    width: 10px !important;
+    height: 10px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  .absolute.bottom-6 .dot.bg-black {
+    background: rgba(255, 255, 255, 1) !important;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    position: relative !important;
+    z-index: auto !important;
+  }
+
+  footer .flex.justify-around {
+    flex-direction: column !important;
+    gap: 30px !important;
+    text-align: center;
+    padding: 30px 20px !important;
+  }
+
+  footer .w-\[170px\] {
+    width: 100% !important;
+  }
+
+  footer ul {
+    text-align: center;
+  }
+
+  footer li {
+    margin-bottom: 8px;
+  }
+
+  footer .flex.justify-start {
+    justify-content: center !important;
+    margin-top: 10px;
+  }
+
+  footer h2 {
+    font-size: 1.3rem !important;
+  }
+
+  footer h3 {
+    font-size: 1rem !important;
+  }
+
+  /* ===== GENERAL TEXT ADJUSTMENTS ===== */
+  .text-6xl {
+    font-size: 2.5rem !important;
+  }
+
+  .text-5xl {
+    font-size: 2rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.8rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.5rem !important;
+  }
+
+  .text-2xl {
+    font-size: 1.3rem !important;
+  }
+
+  .text-xl {
+    font-size: 1.1rem !important;
+  }
+
+  /* ===== SPACING ADJUSTMENTS ===== */
+  .p-15 {
+    padding: 20px !important;
+  }
+
+  .pt-15 {
+    padding-top: 30px !important;
+  }
+
+  .pt-20 {
+    padding-top: 30px !important;
+  }
+
+  .mt-30 {
+    margin-top: 40px !important;
+  }
+
+  .mx-5 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .my-10 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .my-20 {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* ===== OVERFLOW FIX ===== */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .overflow-x-hidden {
+    overflow-x: hidden !important;
+  }
+}
+
+/* Extra Small Devices (Max-width: 480px) */
+@media (max-width: 480px) {
+  
+  header h1 {
+    font-size: 1.1rem !important;
+  }
+
+  header nav {
+    width: 80% !important;
+  }
+
+  .fade-glow h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .fade-glow img {
+    height: 40vh !important;
+  }
+
+  .flex.justify-around.pt-20 > a > div {
+    width: 95% !important;
+    max-width: 200px !important;
+  }
+
+  #emauth h1 {
+    font-size: 2rem !important;
+  }
+
+  #emauth h2 {
+    font-size: 1.1rem !important;
+  }
+
+  #behavorial_biometrics h1 {
+    font-size: 1.8rem !important;
+  }
+
+  #behavorial_biometrics h2 {
+    font-size: 1rem !important;
+  }
+
+  .card {
+    min-width: 260px !important;
+    min-height: 320px !important;
+  }
+
+  #slider h1 {
+    font-size: 1.3rem !important;
+  }
+
+  #slider p {
+    font-size: 0.85rem !important;
+  }
+
+  footer h2 {
+    font-size: 1.1rem !important;
+  }
+
+  .text-6xl {
+    font-size: 2rem !important;
+  }
+
+  .text-5xl {
+    font-size: 1.8rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Landscape Mobile Fix */
+@media (max-height: 600px) and (orientation: landscape) {
+  .fade-glow {
+    min-height: auto !important;
+  }
+
+  .fade-glow img {
+    height: 80vh !important;
+  }
+
+  #slider section {
+    height: 100vh !important;
+  }
+
+  #slider .h-\[65vh\] {
+    height: 60vh !important;
+  }
+
+  #slider .h-1\/2 {
+    height: 40vh !important;
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
