@@ -130,7 +130,7 @@
 
   header nav #megaMenuMobile h2,
   header nav #megaMenuMobile h3 {
-    color: #0e7490 !important;
+    color: #190e90 !important;
     font-size: 1rem;
     margin: 8px 0;
     opacity: 1 !important;
@@ -457,6 +457,7 @@
   .flex.justify-around.pt-20 > a > div .bg-white {
     margin-top: 8px !important;
     margin-bottom: 8px !important;
+    
   }
   
   .flex.justify-around.pt-20 > a > div > div:last-child {
